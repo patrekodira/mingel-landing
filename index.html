@@ -4,15 +4,26 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Mingel - Mobile Landing</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bodymovin/5.9.6/lottie.min.js"></script> <!-- Lottie Runtime -->
     <link rel="stylesheet" href="styles.css">
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/bodymovin/5.12.2/lottie.min.js"></script> <!-- Lottie Player -->
+    <style>
+        /* Ensures animation container stays behind content */
+        #animation-container {
+            position: fixed; /* Keep it in the background */
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 0; /* Send it behind all other content */
+        }
+    </style>
 </head>
 <body>
-    <!-- Lottie Animation Container -->
+    <!-- Animated Background -->
     <div id="animation-container"></div>
 
     <!-- Main Content -->
-    <div id="content" style="display: none;">
+    <div id="content">
         <div class="text-container">
             <p class="tagline">expand your circle one swipe at a time</p>
         </div>
@@ -27,7 +38,7 @@
     </div>
 
     <!-- Footer -->
-    <footer style="display: none;">
+    <footer>
         <p>
             <a href="/privacy-policy">privacy policy</a> | 
             <a href="/terms">terms & conditions</a> | 
@@ -37,20 +48,22 @@
     </footer>
 
     <script>
-        // Initialize Lottie Animation
-        var animation = lottie.loadAnimation({
-            container: document.getElementById('animation-container'), // Target container
-            renderer: 'svg', // Use SVG rendering
-            loop: true, // Infinite loop
-            autoplay: true, // Autoplay enabled
-            path: 'mingel_animation_main.json' // Path to the JSON file
+        // Initialize and display the animation
+        const animationContainer = document.getElementById('animation-container');
+
+        const animation = lottie.loadAnimation({
+            container: animationContainer, // Div to render animation
+            renderer: 'svg', // Render as SVG
+            loop: true, // Continuously play
+            autoplay: true,
+            path: 'mingel_animation_main.json' // Path to JSON file
         });
 
-        // Show main content after 3 seconds
+        // Hide logo after 3 seconds and show landing page content
         setTimeout(() => {
-            document.getElementById('animation-container').style.display = "none"; // Hide animation
-            document.getElementById('content').style.display = "block"; // Show content
-            document.querySelector("footer").style.display = "block"; // Show footer
+            document.getElementById("logo-container").style.display = "none";
+            document.getElementById("content").style.display = "block";
+            document.querySelector("footer").style.display = "block";
         }, 3000);
     </script>
 </body>
