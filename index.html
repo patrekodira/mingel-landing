@@ -19,7 +19,7 @@
             top: 50%;
             left: 50%;
             transform: translate(-50%, -50%);
-            width: 80px; /* Smaller size */
+            width: 80px; /* Adjusted size */
             height: 80px;
             z-index: 2;
             animation: pulse 1s infinite;
@@ -32,10 +32,10 @@
             width: 100%;
             height: 100%;
             z-index: 1;
-            pointer-events: none;
+            overflow: hidden;
         }
 
-        #content {
+        #content, footer {
             display: none; /* Initially hidden until animation completes */
         }
     </style>
@@ -81,10 +81,11 @@
     </footer>
 
     <script>
-        // Show main content after 3 seconds and hide the logo
+        // Show main content after 3 seconds and hide the logo and animation
         setTimeout(() => {
             document.getElementById("logo-container").style.display = "none";
             document.getElementById("content").style.display = "block";
+            document.querySelector("footer").style.display = "block";
         }, 3000);
     </script>
 </body>
