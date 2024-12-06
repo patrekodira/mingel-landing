@@ -28,13 +28,13 @@ html, body {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    width: 180px; /* Adjusted size for bigger logo */
-    height: 180px;
+    width: 120px; /* Pulsating logo size */
+    height: 120px;
     z-index: 2;
     animation: pulse 1s infinite;
 }
 
-/* Pulsating animation */
+/* Pulsating Animation */
 @keyframes pulse {
     0% { transform: translate(-50%, -50%) scale(1); opacity: 1; }
     50% { transform: translate(-50%, -50%) scale(1.2); opacity: 0.8; }
@@ -45,9 +45,9 @@ html, body {
 #content {
     position: relative;
     z-index: 2;
+    display: none; /* Hidden initially */
     padding: 20px;
     color: #2D2D2D;
-    display: none; /* Hidden initially */
 }
 
 .text-container {
@@ -59,7 +59,7 @@ html, body {
     font-size: 40px; /* Adjusted size */
     font-weight: 600; /* Poppins SemiBold */
     color: #2D2D2D;
-    text-align: left; /* Aligned to the left */
+    text-align: left;
     margin-left: 15px;
 }
 
@@ -91,8 +91,8 @@ footer {
 footer p {
     margin: 0;
     color: #FC176A;
-    font-size: 10px; /* Adjusted size */
-    font-weight: 400; /* Poppins Regular */
+    font-size: 10px;
+    font-weight: 400;
 }
 
 footer a {
