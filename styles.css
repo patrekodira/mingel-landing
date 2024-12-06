@@ -4,6 +4,11 @@ body {
     font-family: 'Poppins', sans-serif;
     background-color: #FDF6F2;
     overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
 }
 
 #animation-container {
@@ -17,27 +22,29 @@ body {
 }
 
 /* Pulsating Logo */
-.pulsating-logo {
+.logo-container {
     position: absolute;
     top: 50%;
     left: 50%;
-    width: 75px;
-    height: 75px;
     transform: translate(-50%, -50%);
-    animation: pulse 1.5s infinite;
     z-index: 2;
+}
+
+.pulsating-logo {
+    width: 100px; /* Adjusted size */
+    animation: pulse 1.5s infinite;
 }
 
 /* Keyframes for Pulsating Effect */
 @keyframes pulse {
     0% {
-        transform: translate(-50%, -50%) scale(1);
+        transform: scale(1);
     }
     50% {
-        transform: translate(-50%, -50%) scale(1.2);
+        transform: scale(1.2);
     }
     100% {
-        transform: translate(-50%, -50%) scale(1);
+        transform: scale(1);
     }
 }
 
@@ -46,8 +53,6 @@ body {
     position: relative;
     z-index: 2;
     text-align: center;
-    padding: 20px;
-    color: #2D2D2D;
 }
 
 #landing-page.hidden {
@@ -57,7 +62,7 @@ body {
 .tagline {
     font-size: 40px;
     font-weight: 600; /* Poppins SemiBold */
-    margin: 20px 20px;
+    margin: 20px;
     text-align: left;
 }
 
@@ -65,7 +70,7 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 15px;
+    gap: 10px;
     margin-top: 20px;
 }
 
@@ -80,7 +85,7 @@ body {
 
 /* Footer Styling */
 footer {
-    position: absolute;
+    position: fixed;
     bottom: 0;
     width: 100%;
     background-color: #FDF6F2;
@@ -89,6 +94,7 @@ footer {
     border-top-right-radius: 10%;
     text-align: center;
     padding: 10px 0;
+    z-index: 3;
 }
 
 footer.hidden {
