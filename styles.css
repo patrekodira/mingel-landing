@@ -27,9 +27,9 @@ html, body {
 #logo-container {
     position: absolute;
     top: 50%;
-    left: 50%;
+    left: 40%;
     transform: translate(-50%, -50%);
-    width: 120px; /* Pulsating logo size */
+    width: 100px; /* Pulsating logo size */
     height: auto;
     z-index: 2;
     animation: pulse 1s infinite;
