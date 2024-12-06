@@ -20,7 +20,7 @@ body {
 #content {
     position: relative;
     z-index: 2;
-    text-align: center;
+    text-align: left; /* Align text to the left */
     padding: 20px;
     color: #2D2D2D;
 }
@@ -28,14 +28,13 @@ body {
 .text-container {
     margin-top: 30px;
     margin-bottom: 40px;
+    padding-left: 15px; /* Add left padding for alignment */
 }
 
 .tagline {
-    font-size: 60px;
+    font-size: 40px; /* Smaller size */
     font-weight: 600; /* Poppins SemiBold */
     color: #2D2D2D;
-    text-align: left;
-    margin-left: 15px;
 }
 
 .buttons {
@@ -65,7 +64,7 @@ footer {
 footer p {
     margin: 0;
     color: #FC176A;
-    font-size: 20px;
+    font-size: 10px; /* Smaller footer text */
     font-weight: 400; /* Poppins Regular */
 }
 
