@@ -7,13 +7,7 @@
     <script src="https://unpkg.com/@rive-app/web"></script> <!-- Rive Runtime -->
     <link rel="stylesheet" href="styles.css">
     <style>
-        /* Pulsating animation for the logo */
-        @keyframes pulse {
-            0% { transform: scale(1); opacity: 1; }
-            50% { transform: scale(1.2); opacity: 0.8; }
-            100% { transform: scale(1); opacity: 1; }
-        }
-
+        /* General Responsive Styling */
         html, body {
             margin: 0;
             padding: 0;
@@ -22,17 +16,25 @@
             overflow: hidden;
         }
 
+        /* Centered Pulsating Logo */
         #logo-container {
             position: absolute;
             top: 50%;
             left: 50%;
-            transform: translate(-50%, -50%); /* Ensures exact centering */
-            width: 150px; /* Adjusted size */
-            height: 150px;
+            transform: translate(-50%, -50%);
+            width: 20vw; /* Responsive width relative to viewport */
+            height: auto; /* Keep aspect ratio */
             z-index: 2;
             animation: pulse 1s infinite;
         }
 
+        @keyframes pulse {
+            0% { transform: translate(-50%, -50%) scale(1); opacity: 1; }
+            50% { transform: translate(-50%, -50%) scale(1.2); opacity: 0.8; }
+            100% { transform: translate(-50%, -50%) scale(1); opacity: 1; }
+        }
+
+        /* Animated Background */
         #animation-container {
             position: absolute;
             top: 0;
@@ -43,8 +45,75 @@
             overflow: hidden;
         }
 
-        #content, footer {
-            display: none; /* Initially hidden until animation completes */
+        /* Main Content */
+        #content {
+            position: relative;
+            display: none; /* Hidden initially */
+            text-align: left;
+            padding: 20px;
+            color: #2D2D2D;
+            z-index: 2;
+        }
+
+        .tagline {
+            font-size: 5vw; /* Responsive font size */
+            font-weight: 600; /* Poppins SemiBold */
+            margin-bottom: 30px;
+            color: #2D2D2D;
+        }
+
+        .buttons {
+            display: flex;
+            flex-direction: column; /* Stacks buttons vertically */
+            gap: 15px;
+        }
+
+        .buttons a {
+            display: block;
+            width: 60%; /* Button width relative to screen */
+            margin: 0 auto; /* Center buttons */
+            text-align: center;
+        }
+
+        .buttons img {
+            width: 100%;
+            height: auto;
+        }
+
+        /* Footer */
+        footer {
+            position: relative;
+            display: none; /* Hidden initially */
+            margin-top: 20px;
+            text-align: center;
+            background-color: #FDF6F2;
+            color: #FC176A;
+            font-size: 3vw; /* Responsive font size for footer */
+            padding: 15px;
+            border-top-left-radius: 10%; /* Softer corners */
+            border-top-right-radius: 10%;
+            box-shadow: 0 -4px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        footer p a {
+            color: #FC176A;
+            text-decoration: none;
+            margin: 0 10px;
+        }
+
+        footer p a:hover {
+            text-decoration: underline;
+        }
+
+        /* Media Queries for Very Small Screens */
+        @media (max-width: 360px) {
+            .tagline {
+                font-size: 4.5vw;
+            }
+
+            footer {
+                font-size: 3vw;
+            }
         }
     </style>
 </head>
@@ -60,19 +129,17 @@
 
     <!-- Pulsating Logo -->
     <div id="logo-container">
-        <img src="your-logo.png" alt="Mingel Logo" style="width: 100%; height: auto;">
+        <img src="your-logo.png" alt="Mingel Logo">
     </div>
 
     <!-- Main Content -->
     <div id="content">
-        <div class="text-container">
-            <p class="tagline">expand your circle one swipe at a time</p>
-        </div>
+        <p class="tagline">expand your circle one swipe at a time</p>
         <div class="buttons">
-            <a href="https://www.apple.com/app-store/" class="btn">
+            <a href="https://www.apple.com/app-store/">
                 <img src="app-store.png" alt="App Store">
             </a>
-            <a href="https://play.google.com/store" class="btn">
+            <a href="https://play.google.com/store">
                 <img src="play-store.png" alt="Play Store">
             </a>
         </div>
