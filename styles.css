@@ -4,11 +4,6 @@ body {
     font-family: 'Poppins', sans-serif;
     background-color: #FDF6F2;
     overflow: hidden;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    height: 100vh;
 }
 
 #animation-container {
@@ -21,71 +16,41 @@ body {
     pointer-events: none;
 }
 
-/* Pulsating Logo */
-.logo-container {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    z-index: 2;
-}
-
-.pulsating-logo {
-    width: 100px; /* Adjusted size */
-    animation: pulse 1.5s infinite;
-}
-
-/* Keyframes for Pulsating Effect */
-@keyframes pulse {
-    0% {
-        transform: scale(1);
-    }
-    50% {
-        transform: scale(1.2);
-    }
-    100% {
-        transform: scale(1);
-    }
-}
-
 /* Main Content Styling */
 #content {
     position: relative;
     z-index: 2;
-    text-align: center;
+    padding: 20px;
+    color: #2D2D2D;
 }
 
-#landing-page.hidden {
-    display: none;
+.text-container {
+    margin-top: 30px;
+    margin-bottom: 40px;
 }
 
 .tagline {
-    font-size: 40px;
+    font-size: 40px; /* Adjusted size */
     font-weight: 600; /* Poppins SemiBold */
-    margin: 20px;
-    text-align: left;
+    color: #2D2D2D;
+    text-align: left; /* Aligned to the left */
+    margin-left: 15px;
 }
 
 .buttons {
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 10px;
-    margin-top: 20px;
+    gap: 20px;
 }
 
-.store-button {
-    width: 180px;
-    transition: transform 0.2s ease-in-out;
-}
-
-.store-button:hover {
-    transform: scale(1.05);
+.buttons .btn img {
+    width: 160px;
 }
 
 /* Footer Styling */
 footer {
-    position: fixed;
+    position: absolute;
     bottom: 0;
     width: 100%;
     background-color: #FDF6F2;
@@ -93,25 +58,20 @@ footer {
     border-top-left-radius: 10%;
     border-top-right-radius: 10%;
     text-align: center;
-    padding: 10px 0;
-    z-index: 3;
-}
-
-footer.hidden {
-    display: none;
+    padding: 15px 0;
 }
 
 footer p {
     margin: 0;
     color: #FC176A;
-    font-size: 10px;
+    font-size: 10px; /* Adjusted size */
     font-weight: 400; /* Poppins Regular */
 }
 
 footer a {
     color: #FC176A;
     text-decoration: none;
-    margin: 0 5px;
+    margin: 0 10px;
 }
 
 footer a:hover {
