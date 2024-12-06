@@ -16,10 +16,20 @@ body {
     pointer-events: none; /* Prevent interaction with background */
 }
 
+/* Logo Styling */
+#logo-container {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 2; /* Above animation */
+}
+
 /* Main Content Styling */
 #content {
+    display: none; /* Hidden initially */
     position: relative;
-    z-index: 1; /* Above the background animation */
+    z-index: 1; /* Above animation */
     padding: 20px;
     color: #2D2D2D;
 }
@@ -30,10 +40,10 @@ body {
 }
 
 .tagline {
-    font-size: 40px; /* Adjusted size */
+    font-size: 40px;
     font-weight: 600; /* Poppins SemiBold */
     color: #2D2D2D;
-    text-align: left; /* Aligned to the left */
+    text-align: left;
     margin-left: 15px;
 }
 
@@ -50,6 +60,7 @@ body {
 
 /* Footer Styling */
 footer {
+    display: none; /* Hidden initially */
     position: absolute;
     bottom: 0;
     width: 100%;
@@ -64,7 +75,7 @@ footer {
 footer p {
     margin: 0;
     color: #FC176A;
-    font-size: 10px; /* Adjusted size */
+    font-size: 10px;
     font-weight: 400; /* Poppins Regular */
 }
 
