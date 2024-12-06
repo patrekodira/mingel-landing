@@ -50,9 +50,10 @@
     <script>
         // Show main content after 3 seconds and hide the logo and animation
         setTimeout(() => {
-            document.getElementById("logo-container").style.display = "none";
-            document.getElementById("content").style.display = "block";
-            document.querySelector("footer").style.display = "block";
+            document.getElementById("logo-container").style.display = "none"; // Hide logo
+            document.getElementById("animation-container").style.display = "none"; // Hide animation background
+            document.getElementById("content").style.display = "block"; // Show main content
+            document.querySelector("footer").style.display = "block"; // Show footer
         }, 3000);
     </script>
 </body>
