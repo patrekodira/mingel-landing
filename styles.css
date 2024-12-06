@@ -16,12 +16,32 @@ body {
     pointer-events: none;
 }
 
+/* Pulsating Logo Styling */
+#logo-container {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 120px; /* Adjusted size for 1.5x */
+    height: 120px;
+    z-index: 2;
+    animation: pulse 1s infinite;
+}
+
+/* Pulsating animation */
+@keyframes pulse {
+    0% { transform: translate(-50%, -50%) scale(1); opacity: 1; }
+    50% { transform: translate(-50%, -50%) scale(1.2); opacity: 0.8; }
+    100% { transform: translate(-50%, -50%) scale(1); opacity: 1; }
+}
+
 /* Main Content Styling */
 #content {
     position: relative;
     z-index: 2;
     padding: 20px;
     color: #2D2D2D;
+    display: none; /* Hidden initially */
 }
 
 .text-container {
@@ -59,6 +79,7 @@ footer {
     border-top-right-radius: 10%;
     text-align: center;
     padding: 15px 0;
+    display: none; /* Hidden initially */
 }
 
 footer p {
