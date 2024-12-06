@@ -1,0 +1,87 @@
+/* General Page Setup */
+body {
+    margin: 0;
+    font-family: 'Poppins', sans-serif;
+    background-color: #FDF6F2;
+    overflow: hidden;
+}
+
+#animation-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    pointer-events: none;
+}
+
+/* Main Content Styling */
+#content {
+    position: relative;
+    z-index: 2;
+    text-align: center;
+    padding: 20px;
+    color: #2D2D2D;
+}
+
+.logo {
+    width: 150px;
+    margin: 20px auto;
+}
+
+.tagline {
+    font-size: 20px;
+    font-weight: 600; /* Poppins SemiBold */
+    margin: 10px auto;
+}
+
+.buttons {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-top: 20px;
+}
+
+.store-button {
+    width: 160px;
+    padding: 10px;
+    border: 1px solid #EBEBEB;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s ease-in-out;
+}
+
+.store-button:hover {
+    transform: scale(1.05);
+}
+
+/* Footer Styling */
+footer {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    background-color: #FDF6F2;
+    box-shadow: 0 -4px 10px rgba(0, 0, 0, 0.1);
+    border-top-left-radius: 25%;
+    border-top-right-radius: 25%;
+    text-align: center;
+    padding: 15px 0;
+}
+
+footer p {
+    margin: 0;
+    color: #FC176A;
+    font-size: 14px;
+    font-weight: 400; /* Poppins Regular */
+}
+
+footer a {
+    color: #FC176A;
+    text-decoration: none;
+    margin: 0 5px;
+}
+
+footer a:hover {
+    text-decoration: underline;
+}
