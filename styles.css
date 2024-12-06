@@ -16,36 +16,66 @@ body {
     pointer-events: none;
 }
 
+/* Pulsating Logo */
+.pulsating-logo {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 75px;
+    height: 75px;
+    transform: translate(-50%, -50%);
+    animation: pulse 1.5s infinite;
+    z-index: 2;
+}
+
+/* Keyframes for Pulsating Effect */
+@keyframes pulse {
+    0% {
+        transform: translate(-50%, -50%) scale(1);
+    }
+    50% {
+        transform: translate(-50%, -50%) scale(1.2);
+    }
+    100% {
+        transform: translate(-50%, -50%) scale(1);
+    }
+}
+
 /* Main Content Styling */
 #content {
     position: relative;
     z-index: 2;
+    text-align: center;
     padding: 20px;
     color: #2D2D2D;
 }
 
-.text-container {
-    margin-top: 30px;
-    margin-bottom: 40px;
+#landing-page.hidden {
+    display: none;
 }
 
 .tagline {
-    font-size: 40px; /* Adjusted size */
+    font-size: 40px;
     font-weight: 600; /* Poppins SemiBold */
-    color: #2D2D2D;
-    text-align: left; /* Aligned to the left */
-    margin-left: 15px;
+    margin: 20px 20px;
+    text-align: left;
 }
 
 .buttons {
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 20px;
+    gap: 15px;
+    margin-top: 20px;
 }
 
-.buttons .btn img {
-    width: 160px;
+.store-button {
+    width: 180px;
+    transition: transform 0.2s ease-in-out;
+}
+
+.store-button:hover {
+    transform: scale(1.05);
 }
 
 /* Footer Styling */
@@ -58,20 +88,24 @@ footer {
     border-top-left-radius: 10%;
     border-top-right-radius: 10%;
     text-align: center;
-    padding: 15px 0;
+    padding: 10px 0;
+}
+
+footer.hidden {
+    display: none;
 }
 
 footer p {
     margin: 0;
     color: #FC176A;
-    font-size: 10px; /* Adjusted size */
+    font-size: 10px;
     font-weight: 400; /* Poppins Regular */
 }
 
 footer a {
     color: #FC176A;
     text-decoration: none;
-    margin: 0 10px;
+    margin: 0 5px;
 }
 
 footer a:hover {
