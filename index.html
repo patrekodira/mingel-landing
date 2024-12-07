@@ -11,9 +11,9 @@
     <!-- Animated Background -->
     <div id="animation-container"></div>
 
-    <!-- Pulsating Logo -->
+    <!-- Pulsating Logo Animation -->
     <div id="logo-container">
-        <img src="your-logo.png" alt="Mingel Logo" style="width: 120px; height: auto;">
+        <div id="logo-animation"></div>
     </div>
 
     <!-- Main Content -->
@@ -42,25 +42,29 @@
     </footer>
 
     <script>
-        // Initialize and display the animation
-        const animationContainer = document.getElementById('animation-container');
-
-        const animation = lottie.loadAnimation({
-            container: animationContainer, // Div to render animation
-            renderer: 'svg', // Render as SVG
-            loop: true, // Continuously play
+        // Background Circles Animation
+        const backgroundAnimation = lottie.loadAnimation({
+            container: document.getElementById('animation-container'),
+            renderer: 'svg',
+            loop: true,
             autoplay: true,
-            path: 'mingel_animation_main.json' // Path to JSON file
+            path: 'mingel_animation_main.json'
         });
 
-        // Ensure logo shows up in the center initially
-        document.getElementById("logo-container").style.display = "block";
+        // Pulsating Logo Animation
+        const logoAnimation = lottie.loadAnimation({
+            container: document.getElementById('logo-animation'),
+            renderer: 'svg',
+            loop: false, // Only plays for 3 seconds
+            autoplay: true,
+            path: 'mingel_logo_pulse.json'
+        });
 
-        // Hide logo and show content after 3 seconds
+        // Hide logo animation and show content after 3 seconds
         setTimeout(() => {
-            document.getElementById("logo-container").style.display = "none"; // Hide the logo
-            document.getElementById("content").style.display = "block"; // Show main content
-            document.querySelector("footer").style.display = "block"; // Show footer
+            document.getElementById("logo-container").style.display = "none";
+            document.getElementById("content").style.display = "block";
+            document.querySelector("footer").style.display = "block";
         }, 3000);
     </script>
 </body>
