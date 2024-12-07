@@ -16,13 +16,15 @@ body {
     pointer-events: none; /* Prevent interaction with background */
 }
 
-/* Logo Styling */
+/* Logo Animation Styling */
 #logo-container {
     position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    z-index: 2; /* Above animation */
+    z-index: 2; /* Above background animation */
+    width: 100%;
+    height: 100%;
 }
 
 /* Main Content Styling */
@@ -61,7 +63,7 @@ body {
 /* Footer Styling */
 footer {
     display: none; /* Hidden initially */
-    position: absolute;
+    position: relative;
     bottom: 0;
     width: 100%;
     background-color: #FDF6F2;
@@ -70,12 +72,13 @@ footer {
     border-top-right-radius: 10%;
     text-align: center;
     padding: 15px 0;
+    z-index: 1; /* Above the animation */
 }
 
 footer p {
     margin: 0;
     color: #FC176A;
-    font-size: 10px;
+    font-size: 10px; /* Adjusted size */
     font-weight: 400; /* Poppins Regular */
 }
 
