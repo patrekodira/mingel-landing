@@ -18,17 +18,9 @@
 
     <!-- Main Content -->
     <div id="content">
-        <!-- Small Mingel Logo -->
-        <div class="top-logo">
-            <img src="logo_mingel.png" alt="Mingel Logo">
-        </div>
-
-        <!-- Main Tagline -->
         <div class="text-container">
             <p class="tagline">expand your circle one swipe at a time</p>
         </div>
-
-        <!-- Buttons -->
         <div class="buttons">
             <a href="https://www.apple.com/app-store/" class="btn">
                 <img src="app-store.png" alt="App Store">
@@ -68,7 +60,7 @@
             path: 'mingel_logo_pulse.json'
         });
 
-        // Show main content after 3 seconds and hide the logo animation
+        // Hide logo animation and show content after 3 seconds
         setTimeout(() => {
             document.getElementById("logo-container").style.display = "none";
             document.getElementById("content").style.display = "block";
