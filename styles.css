@@ -7,13 +7,13 @@ body {
 }
 
 #animation-container {
-    position: fixed; /* Fixed to the viewport */
+    position: fixed;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    z-index: 0; /* Behind all other content */
-    pointer-events: none; /* Prevent interaction with background */
+    z-index: 0;
+    pointer-events: none;
 }
 
 /* Logo Animation Styling */
@@ -31,29 +31,44 @@ body {
 #content {
     display: none; /* Hidden initially */
     position: relative;
-    z-index: 1; /* Above animation */
+    z-index: 1;
     padding: 20px;
     color: #2D2D2D;
 }
 
+/* Small Mingel Logo Styling */
+.top-logo {
+    display: flex;
+    justify-content: center;
+    margin-top: 10px; /* Padding from the top */
+}
+
+.top-logo img {
+    width: 120px; /* Adjust size */
+    height: auto;
+}
+
+/* Main Tagline Styling */
 .text-container {
-    margin-top: 30px;
+    margin-top: 50px; /* Adjust spacing from logo */
     margin-bottom: 40px;
 }
 
 .tagline {
-    font-size: 40px;
+    font-size: 30px; /* Adjusted size */
     font-weight: 600; /* Poppins SemiBold */
     color: #2D2D2D;
     text-align: left;
     margin-left: 15px;
 }
 
+/* Buttons Styling */
 .buttons {
     display: flex;
     flex-direction: column;
     align-items: center;
     gap: 20px;
+    margin-top: 20px; /* Spacing after tagline */
 }
 
 .buttons .btn img {
