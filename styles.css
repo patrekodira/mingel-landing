@@ -68,6 +68,7 @@ body {
 }
 
 footer {
+    display: none; /* Hidden by default until intro animation ends */
     position: fixed; /* Sticks footer to the bottom of the screen */
     bottom: 0;
     width: 100%;
