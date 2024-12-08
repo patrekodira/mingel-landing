@@ -121,3 +121,35 @@ footer a:hover {
     box-shadow: 0 -4px 10px rgba(0, 0, 0, 0.1);
     border-radius: 10px;
 }
+
+/* General Styling for Privacy Policy */
+h2 {
+    font-size: 20px; /* Ensure consistent size for headings */
+    font-weight: 600; /* Poppins SemiBold */
+    color: #2D2D2D;
+    margin-top: 20px; /* Add spacing above headings */
+    margin-bottom: 10px; /* Add spacing below headings */
+}
+
+p {
+    font-size: 16px; /* Ensure consistent size for paragraph text */
+    font-weight: 400; /* Poppins Regular */
+    color: #2D2D2D;
+    line-height: 1.5; /* Improve readability with line spacing */
+    margin-bottom: 15px; /* Add spacing between paragraphs */
+}
+
+ul {
+    margin-left: 20px; /* Indent unordered lists */
+    margin-bottom: 15px;
+    list-style-type: disc; /* Use bullet points for lists */
+}
+
+li {
+    font-size: 16px; /* Match paragraph size */
+    font-weight: 400;
+    color: #2D2D2D;
+    line-height: 1.5;
+    margin-bottom: 10px; /* Add spacing between list items */
+}
+
