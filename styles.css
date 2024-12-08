@@ -21,7 +21,7 @@ body {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    width: 150px;
+    width: 150px; /* Pulsating logo size */
     height: 150px;
     z-index: 2;
 }
@@ -32,6 +32,7 @@ body {
     z-index: 2;
     padding: 20px;
     color: #2D2D2D;
+    display: none; /* Initially hidden */
 }
 
 .logo-mingel img {
@@ -75,6 +76,7 @@ footer {
     border-top-right-radius: 10%;
     text-align: center;
     padding: 15px 0;
+    display: none; /* Initially hidden */
 }
 
 footer p {
