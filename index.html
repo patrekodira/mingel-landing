@@ -3,27 +3,17 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mingel - Responsive Landing</title>
+    <title>Mingel - Mobile Landing</title>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/bodymovin/5.9.6/lottie.min.js"></script>
 </head>
 <body>
-    <!-- Header for Desktop -->
-    <header id="header">
-        <div id="logo-header">
-            <img src="logo_mingel.png" alt="Mingel Logo">
-            <span>Mingel</span>
-        </div>
-    </header>
+    <!-- Animated Background -->
+    <div id="animation-container"></div>
 
-    <!-- Desktop Animation -->
-    <div id="desktop-animation-container"></div>
-    <div id="desktop-pulse-container"></div>
-
-    <!-- Mobile Animation -->
-    <div id="mobile-animation-container"></div>
-    <div id="mobile-pulse-container"></div>
+    <!-- Pulsating Logo -->
+    <div id="pulse-logo"></div>
 
     <!-- Main Content -->
     <div id="content">
@@ -55,94 +45,32 @@
     </footer>
 
     <script>
-        document.addEventListener("DOMContentLoaded", function () {
-            const desktopAnimationContainer = document.getElementById('desktop-animation-container');
-            const desktopPulseContainer = document.getElementById('desktop-pulse-container');
-            const mobileAnimationContainer = document.getElementById('mobile-animation-container');
-            const mobilePulseContainer = document.getElementById('mobile-pulse-container');
-            const tagline = document.querySelector('.tagline');
-            const header = document.getElementById('header');
-
-            // Load Desktop Animation
-            if (window.innerWidth >= 768) {
-                // Load desktop circle animation
-                lottie.loadAnimation({
-                    container: desktopAnimationContainer,
-                    renderer: 'svg',
-                    loop: true,
-                    autoplay: true,
-                    path: 'mingel_animation_desktop.json' // Desktop circle animation
-                });
-
-                // Load desktop pulse animation
-                lottie.loadAnimation({
-                    container: desktopPulseContainer,
-                    renderer: 'svg',
-                    loop: false,
-                    autoplay: true,
-                    path: 'mingel_logo_pulse_desktop.json' // Desktop pulse animation
-                });
-
-                desktopAnimationContainer.style.display = 'block';
-                desktopPulseContainer.style.display = 'block';
-                mobileAnimationContainer.style.display = 'none';
-                mobilePulseContainer.style.display = 'none';
-            } else {
-                // Load mobile circle animation
-                lottie.loadAnimation({
-                    container: mobileAnimationContainer,
-                    renderer: 'svg',
-                    loop: true,
-                    autoplay: true,
-                    path: 'mingel_animation_main.json' // Mobile circle animation
-                });
-
-                // Load mobile pulse animation
-                lottie.loadAnimation({
-                    container: mobilePulseContainer,
-                    renderer: 'svg',
-                    loop: false,
-                    autoplay: true,
-                    path: 'mingel_logo_pulse.json' // Mobile pulse animation
-                });
-
-                desktopAnimationContainer.style.display = 'none';
-                desktopPulseContainer.style.display = 'none';
-                mobileAnimationContainer.style.display = 'block';
-                mobilePulseContainer.style.display = 'block';
-            }
-
-            // Hide pulse animations and show main content after 3 seconds
-            setTimeout(() => {
-                desktopPulseContainer.style.display = 'none';
-                mobilePulseContainer.style.display = 'none';
-                document.getElementById("content").style.display = "block"; // Show landing page content
-            }, 3000);
-
-            // Scroll Behavior
-            window.addEventListener('scroll', function () {
-                const scrollY = window.scrollY;
-                const fadeStart = 100;
-                const fadeEnd = 300;
-
-                // Fade tagline
-                if (scrollY >= fadeStart && scrollY <= fadeEnd) {
-                    const opacity = 1 - (scrollY - fadeStart) / (fadeEnd - fadeStart);
-                    tagline.style.opacity = opacity;
-                } else if (scrollY > fadeEnd) {
-                    tagline.style.opacity = 0;
-                } else {
-                    tagline.style.opacity = 1;
-                }
-
-                // Background Change
-                if (scrollY > fadeEnd) {
-                    document.body.style.backgroundColor = '#2D2D2D';
-                } else {
-                    document.body.style.backgroundColor = '#F8DDE3';
-                }
-            });
+        // Load the background animation
+        var animationContainer = document.getElementById('animation-container');
+        lottie.loadAnimation({
+            container: animationContainer,
+            renderer: 'svg',
+            loop: true,
+            autoplay: true,
+            path: 'mingel_animation_main.json' // Ensure correct path
         });
+
+        // Load the pulsating logo animation
+        var pulseLogoContainer = document.getElementById('pulse-logo');
+        lottie.loadAnimation({
+            container: pulseLogoContainer,
+            renderer: 'svg',
+            loop: true,
+            autoplay: true,
+            path: 'mingel_logo_pulse.json' // Ensure correct path
+        });
+
+        // Hide the pulsating logo after 3 seconds and show the landing page
+        setTimeout(() => {
+            document.getElementById("pulse-logo").style.display = "none"; // Hide pulsating logo
+            document.getElementById("content").style.display = "block"; // Show landing page content
+            document.getElementById("footer").style.display = "block"; // Show footer
+        }, 3000);
     </script>
 </body>
 </html>
