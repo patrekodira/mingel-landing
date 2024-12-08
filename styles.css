@@ -45,24 +45,22 @@ body {
 
 .text-container {
     margin-top: 30px;
-    margin-bottom: 40px;
+    margin-bottom: 20px; /* Adjust spacing between the container and buttons */
+    padding-left: 15px; /* Ensures consistent alignment for both lines */
 }
 
 .tagline {
     font-size: 40px;
     font-weight: 600; /* Poppins SemiBold */
     color: #2D2D2D;
-    text-align: left; /* Aligned to the left */
-    margin-left: 15px;
+    margin: 0; /* Remove any default margins */
 }
 
 .sub-tagline {
     font-size: 15px;
     font-weight: 400; /* Poppins Regular */
     color: #FC176A; /* Hot pink */
-    text-align: left; /* Aligned to the left */
-    margin-left: 15px;
-    margin-top: 1px; /* Padding between tagline and sub-tagline */
+    margin: 5px 0 0 0; /* Reduce spacing between tagline and sub-tagline */
 }
 
 .buttons {
