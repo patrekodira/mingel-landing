@@ -50,7 +50,7 @@ body {
 }
 
 .tagline {
-    font-size: 40px;
+    font-size: 30px;
     font-weight: 600; /* Poppins SemiBold */
     color: #2D2D2D;
     margin: 0; /* Remove any default margins */
@@ -60,7 +60,7 @@ body {
     font-size: 15px;
     font-weight: 400; /* Poppins Regular */
     color: #FC176A; /* Hot pink */
-    margin: 5px 0 0 0; /* Reduce spacing between tagline and sub-tagline */
+    margin: 0; /* Reduce spacing between tagline and sub-tagline */
 }
 
 .buttons {
