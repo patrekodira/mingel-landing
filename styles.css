@@ -18,7 +18,7 @@ body {
     justify-content: flex-start;
     padding: 0 20px;
     box-sizing: border-box;
-    color: #ffffff;
+    color: #2d2d2d;
     font-family: 'Poppins', sans-serif;
 }
 
@@ -29,12 +29,7 @@ body {
 }
 
 .header-content img {
-    height: 40px; /* Adjust the logo size */
-}
-
-.header-content .header-title {
-    font-size: 18px;
-    font-weight: 600;
+    height: 10px; /* Adjust the logo size */
 }
 
 /* Show header only for desktop after animation */
