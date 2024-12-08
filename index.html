@@ -4,32 +4,20 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Mingel - Mobile Landing</title>
-    <script src="https://unpkg.com/@rive-app/web"></script> <!-- Rive Runtime -->
     <link rel="stylesheet" href="styles.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bodymovin/5.9.6/lottie.min.js"></script> <!-- Lottie Runtime -->
 </head>
 <body>
     <!-- Animated Background -->
-    <div id="animation-container">
-        <rive-player 
-            src="mingel_animation_main.json" 
-            style="width: 100%; height: 100%;" 
-            autoplay loop>
-        </rive-player>
-    </div>
+    <div id="animation-container"></div>
 
     <!-- Pulsating Logo -->
-    <div id="pulse-logo">
-        <rive-player 
-            src="mingel_logo_pulse.json" 
-            style="width: 180px; height: 180px;" <!-- Adjusted to 1.5x original size -->
-            autoplay loop>
-        </rive-player>
-    </div>
+    <div id="pulse-logo"></div>
 
     <!-- Main Content -->
     <div id="content">
         <div id="logo-mingel">
-            <img src="logo_mingel.png" alt="Mingel" style="width: 100px;"> <!-- Adjusted size to 2.5x -->
+            <img src="logo_mingel.png" alt="Mingel Logo">
         </div>
         <div class="text-container">
             <p class="tagline">expand your circle one swipe at a time</p>
@@ -55,7 +43,27 @@
     </footer>
 
     <script>
-        // Show main content after 3 seconds and hide the pulse logo
+        // Load the background animation
+        var animationContainer = document.getElementById('animation-container');
+        lottie.loadAnimation({
+            container: animationContainer,
+            renderer: 'svg',
+            loop: true,
+            autoplay: true,
+            path: 'mingel_animation_main.json' // Ensure correct path
+        });
+
+        // Load the pulsating logo animation
+        var pulseLogoContainer = document.getElementById('pulse-logo');
+        lottie.loadAnimation({
+            container: pulseLogoContainer,
+            renderer: 'svg',
+            loop: true,
+            autoplay: true,
+            path: 'mingel_logo_pulse.json' // Ensure correct path
+        });
+
+        // Show main content after 3 seconds
         setTimeout(() => {
             document.getElementById("pulse-logo").style.display = "none";
             document.getElementById("content").style.display = "block";
