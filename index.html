@@ -11,10 +11,10 @@
 <body>
     <!-- Desktop Header -->
     <header id="desktop-header">
-        <div class="logo-container">
-            <img src="logo_mingel.png" alt="Mingel Logo">
-        </div>
-    </header>
+    <div class="header-content">
+        <img src="logo_mingel.png" alt="Mingel Logo">
+    </div>
+</header>
 
     <!-- Animated Background -->
     <div id="animation-container"></div>
@@ -52,37 +52,37 @@
     </footer>
 
     <script>
-        // Determine animation file based on screen size
-        const isDesktop = window.innerWidth >= 1280;
-        const animationFile = isDesktop ? 'mingel_animation_desktop.json' : 'mingel_animation_main.json';
-        const pulseFile = isDesktop ? 'mingel_logo_pulse_desktop.json' : 'mingel_logo_pulse.json';
+    // Load animations
+    var animationContainer = document.getElementById('animation-container');
+    var pulseLogoContainer = document.getElementById('pulse-logo');
 
-        // Load the background animation
-        const animationContainer = document.getElementById('animation-container');
-        lottie.loadAnimation({
-            container: animationContainer,
-            renderer: 'svg',
-            loop: true,
-            autoplay: true,
-            path: animationFile
-        });
+    lottie.loadAnimation({
+        container: animationContainer,
+        renderer: 'svg',
+        loop: true,
+        autoplay: true,
+        path: window.innerWidth >= 1280 ? 'mingel_animation_desktop.json' : 'mingel_animation_main.json'
+    });
 
-        // Load the pulsating logo animation
-        const pulseLogoContainer = document.getElementById('pulse-logo');
-        lottie.loadAnimation({
-            container: pulseLogoContainer,
-            renderer: 'svg',
-            loop: true,
-            autoplay: true,
-            path: pulseFile
-        });
+    lottie.loadAnimation({
+        container: pulseLogoContainer,
+        renderer: 'svg',
+        loop: true,
+        autoplay: true,
+        path: 'mingel_logo_pulse.json'
+    });
 
-        // Hide the pulsating logo after 3 seconds and show the landing page
-        setTimeout(() => {
-            document.getElementById("pulse-logo").style.display = "none"; // Hide pulsating logo
-            document.getElementById("content").style.display = "block"; // Show landing page content
-            document.getElementById("footer").style.display = "block"; // Show footer
-        }, 3000);
-    </script>
-</body>
-</html>
+    // Hide header during animation
+    const header = document.getElementById('desktop-header');
+    header.style.display = 'none';
+
+    setTimeout(() => {
+        document.getElementById("pulse-logo").style.display = "none"; // Hide pulsating logo
+        document.getElementById("content").style.display = "block"; // Show landing page content
+        document.getElementById("footer").style.display = "block"; // Show footer
+
+        if (window.innerWidth >= 1280) {
+            header.style.display = "flex"; // Show header only for desktop
+        }
+    }, 3000);
+</script>
