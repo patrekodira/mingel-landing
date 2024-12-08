@@ -21,13 +21,13 @@ body {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    width: 270px; /* Increased size to 1.5 times */
+    width: 270px; /* Correct size */
     height: 270px;
     z-index: 2;
 }
 
 #content {
-    display: none;
+    display: none; /* Hidden by default until intro animation completes */
     position: relative;
     z-index: 3;
     padding: 20px;
@@ -69,7 +69,7 @@ body {
 
 footer {
     display: none; /* Hidden by default until intro animation ends */
-    position: fixed; /* Sticks footer to the bottom of the screen */
+    position: fixed; /* Ensures footer stays at the bottom */
     bottom: 0;
     width: 100%;
     background-color: #FDF6F2;
