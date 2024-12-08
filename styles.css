@@ -62,7 +62,7 @@ body {
     color: #FC176A; /* Hot pink */
     text-align: left; /* Aligned to the left */
     margin-left: 15px;
-    margin-top: 5px; /* Padding between tagline and sub-tagline */
+    margin-top: 1px; /* Padding between tagline and sub-tagline */
 }
 
 .buttons {
