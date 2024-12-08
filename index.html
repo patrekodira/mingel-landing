@@ -33,12 +33,12 @@
     </div>
 
     <!-- Footer -->
-    <footer>
+    <footer id="footer">
         <p>
             <a href="/privacy-policy">privacy policy</a> | 
             <a href="/terms">terms & conditions</a> | 
             <a href="/eula">eula</a> | 
-             ©mingel 2024
+            ©mingel 2024
         </p>
     </footer>
 
@@ -67,7 +67,7 @@
         setTimeout(() => {
             document.getElementById("pulse-logo").style.display = "none";
             document.getElementById("content").style.display = "block";
-            document.querySelector("footer").style.display = "block";
+            document.getElementById("footer").style.display = "block";
         }, 3000);
     </script>
 </body>
