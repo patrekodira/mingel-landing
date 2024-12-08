@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mingel - Mobile Landing</title>
+    <title>Mingel - Landing</title>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/bodymovin/5.9.6/lottie.min.js"></script>
@@ -45,24 +45,29 @@
     </footer>
 
     <script>
+        // Determine animation file based on screen size
+        const isDesktop = window.innerWidth >= 1280;
+        const animationFile = isDesktop ? 'mingel_animation_desktop.json' : 'mingel_animation_main.json';
+        const pulseFile = isDesktop ? 'mingel_logo_pulse_desktop.json' : 'mingel_logo_pulse.json';
+
         // Load the background animation
-        var animationContainer = document.getElementById('animation-container');
+        const animationContainer = document.getElementById('animation-container');
         lottie.loadAnimation({
             container: animationContainer,
             renderer: 'svg',
             loop: true,
             autoplay: true,
-            path: 'mingel_animation_main.json' // Ensure correct path
+            path: animationFile
         });
 
         // Load the pulsating logo animation
-        var pulseLogoContainer = document.getElementById('pulse-logo');
+        const pulseLogoContainer = document.getElementById('pulse-logo');
         lottie.loadAnimation({
             container: pulseLogoContainer,
             renderer: 'svg',
             loop: true,
             autoplay: true,
-            path: 'mingel_logo_pulse.json' // Ensure correct path
+            path: pulseFile
         });
 
         // Hide the pulsating logo after 3 seconds and show the landing page
