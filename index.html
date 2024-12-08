@@ -4,23 +4,36 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Mingel - Mobile Landing</title>
+    <script src="https://unpkg.com/@rive-app/web"></script> <!-- Rive Runtime -->
     <link rel="stylesheet" href="styles.css">
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/bodymovin/5.9.6/lottie.min.js"></script> <!-- Lottie Runtime -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet"> <!-- Poppins Font -->
 </head>
 <body>
     <!-- Animated Background -->
-    <div id="animation-container"></div>
+    <div id="animation-container">
+        <rive-player 
+            src="mingel_animation_main.json" 
+            style="width: 100%; height: 100%;" 
+            autoplay loop>
+        </rive-player>
+    </div>
 
     <!-- Pulsating Logo -->
-    <div id="pulse-logo"></div>
+    <div id="logo-container">
+        <rive-player 
+            src="mingel_logo_pulse.json" 
+            style="width: 100%; height: 100%;" 
+            autoplay loop>
+        </rive-player>
+    </div>
 
     <!-- Main Content -->
     <div id="content">
-        <div id="logo-mingel">
+        <div class="logo-mingel">
             <img src="logo_mingel.png" alt="Mingel Logo">
         </div>
         <div class="text-container">
-            <p class="tagline">expand your circle one swipe at a time.</p>
+            <p class="tagline">expand your circle one swipe at a time</p>
         </div>
         <div class="buttons">
             <a href="https://www.apple.com/app-store/" class="btn">
@@ -33,7 +46,7 @@
     </div>
 
     <!-- Footer -->
-    <footer id="footer">
+    <footer>
         <p>
             <a href="/privacy-policy">privacy policy</a> | 
             <a href="/terms">terms & conditions</a> | 
@@ -43,31 +56,11 @@
     </footer>
 
     <script>
-        // Load the background animation
-        var animationContainer = document.getElementById('animation-container');
-        lottie.loadAnimation({
-            container: animationContainer,
-            renderer: 'svg',
-            loop: true,
-            autoplay: true,
-            path: 'mingel_animation_main.json' // Ensure correct path
-        });
-
-        // Load the pulsating logo animation
-        var pulseLogoContainer = document.getElementById('pulse-logo');
-        lottie.loadAnimation({
-            container: pulseLogoContainer,
-            renderer: 'svg',
-            loop: true,
-            autoplay: true,
-            path: 'mingel_logo_pulse.json' // Ensure correct path
-        });
-
-        // Hide the pulsating logo after 3 seconds and show the landing page
+        // Show main content after 3 seconds and hide the logo and animation
         setTimeout(() => {
-            document.getElementById("pulse-logo").style.display = "none"; // Hide pulsating logo
-            document.getElementById("content").style.display = "block"; // Show landing page content
-            document.getElementById("footer").style.display = "block"; // Show footer
+            document.getElementById("logo-container").style.display = "none";
+            document.getElementById("content").style.display = "block";
+            document.querySelector("footer").style.display = "block";
         }, 3000);
     </script>
 </body>
