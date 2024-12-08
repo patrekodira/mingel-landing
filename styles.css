@@ -7,78 +7,68 @@ body {
 }
 
 #animation-container {
-    position: fixed;
+    position: absolute;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    z-index: 0;
+    z-index: 1;
     pointer-events: none;
 }
 
-/* Logo Animation Styling */
-#logo-container {
+#pulse-logo {
     position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    z-index: 2; /* Above background animation */
-    width: 80px; /* Adjusted smaller size */
-    height: 80px;
+    width: 180px;
+    height: 180px;
+    z-index: 2;
 }
 
-/* Main Content Styling */
 #content {
-    display: none; /* Hidden initially */
+    display: none;
     position: relative;
-    z-index: 1;
+    z-index: 2;
     padding: 20px;
     color: #2D2D2D;
 }
 
-/* Small Mingel Logo Styling */
-.top-logo {
-    display: flex;
-    justify-content: center;
-    margin-top: 10px; /* Padding from the top */
+#logo-mingel {
+    text-align: center;
+    margin-bottom: 15px;
 }
 
-.top-logo img {
-    width: 40px; /* Adjust size to make it much smaller */
-    height: auto;
+#logo-mingel img {
+    width: 100px;
 }
 
-/* Main Tagline Styling */
 .text-container {
-    margin-top: 50px; /* Adjust spacing from logo */
+    margin-top: 30px;
     margin-bottom: 40px;
 }
 
 .tagline {
-    font-size: 30px; /* Adjusted size */
-    font-weight: 600; /* Poppins SemiBold */
+    font-size: 30px;
+    font-weight: 600;
     color: #2D2D2D;
     text-align: left;
     margin-left: 15px;
 }
 
-/* Buttons Styling */
 .buttons {
     display: flex;
     flex-direction: column;
     align-items: center;
     gap: 20px;
-    margin-top: 20px; /* Spacing after tagline */
 }
 
 .buttons .btn img {
     width: 160px;
 }
 
-/* Footer Styling */
 footer {
-    display: none; /* Hidden initially */
-    position: fixed; /* Stuck to the bottom */
+    position: absolute;
     bottom: 0;
     width: 100%;
     background-color: #FDF6F2;
@@ -87,14 +77,13 @@ footer {
     border-top-right-radius: 10%;
     text-align: center;
     padding: 15px 0;
-    z-index: 1; /* Above the animation */
 }
 
 footer p {
     margin: 0;
     color: #FC176A;
-    font-size: 10px; /* Adjusted size */
-    font-weight: 400; /* Poppins Regular */
+    font-size: 10px;
+    font-weight: 400;
 }
 
 footer a {
