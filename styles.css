@@ -6,19 +6,7 @@ body {
     overflow: hidden;
 }
 
-/* Pulsating Animation Container */
-#pulse-animation-container {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    z-index: 2;
-    width: 150px; /* Adjust size if needed */
-    height: 150px;
-}
-
-/* Circles Animation Background */
-#circle-animation-container {
+#animation-container {
     position: absolute;
     top: 0;
     left: 0;
@@ -28,29 +16,41 @@ body {
     pointer-events: none;
 }
 
-/* Main Content Styling */
-#content {
-    display: none; /* Hidden initially */
-    position: relative;
+#pulse-logo {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 270px; /* Correct size */
+    height: 270px;
     z-index: 2;
+}
+
+#content {
+    display: none; /* Hidden by default until intro animation completes */
+    position: relative;
+    z-index: 3;
     padding: 20px;
     color: #2D2D2D;
 }
 
+#logo-mingel {
+    text-align: center;
+    margin-bottom: 15px;
+}
+
 #logo-mingel img {
-    display: block;
-    width: 50px; /* Adjust as needed */
-    margin: 0 auto 20px auto;
+    width: 100px;
 }
 
 .text-container {
-    margin-top: 20px;
-    margin-bottom: 30px;
+    margin-top: 30px;
+    margin-bottom: 40px;
 }
 
 .tagline {
-    font-size: 30px; /* Adjusted size */
-    font-weight: 600; /* Poppins SemiBold */
+    font-size: 30px;
+    font-weight: 600;
     color: #2D2D2D;
     text-align: left;
     margin-left: 15px;
@@ -67,10 +67,9 @@ body {
     width: 160px;
 }
 
-/* Footer Styling */
 footer {
-    display: none; /* Hidden initially */
-    position: absolute;
+    display: none; /* Hidden by default until intro animation ends */
+    position: fixed; /* Ensures footer stays at the bottom */
     bottom: 0;
     width: 100%;
     background-color: #FDF6F2;
@@ -79,13 +78,14 @@ footer {
     border-top-right-radius: 10%;
     text-align: center;
     padding: 15px 0;
+    z-index: 3; /* Ensures footer stays above the animation */
 }
 
 footer p {
     margin: 0;
     color: #FC176A;
-    font-size: 10px; /* Adjusted size */
-    font-weight: 400; /* Poppins Regular */
+    font-size: 10px;
+    font-weight: 400;
 }
 
 footer a {
