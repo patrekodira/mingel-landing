@@ -44,23 +44,24 @@ body {
 }
 
 .text-container {
-    margin-top: 30px;
-    margin-bottom: 20px; /* Adjust spacing between the container and buttons */
-    padding-left: 15px; /* Ensures consistent alignment for both lines */
+    margin-top: 40px;
+    margin-bottom: 20px; /* Adjust for buttons */
+    padding-left: 15px; /* Consistent alignment for text */
 }
 
 .tagline {
-    font-size: 30px;
+    font-size: 30px; /* Explicitly set */
     font-weight: 600; /* Poppins SemiBold */
     color: #2D2D2D;
-    margin: 0; /* Remove any default margins */
+    margin: 0; /* Remove unnecessary margins */
 }
 
 .sub-tagline {
-    font-size: 15px;
+    font-size: 15px; /* Adjust sub-headline size */
     font-weight: 400; /* Poppins Regular */
     color: #FC176A; /* Hot pink */
-    margin: 0; /* Reduce spacing between tagline and sub-tagline */
+    margin-top: 5px; /* Smaller spacing between headline and sub-headline */
+    margin-bottom: 10px; /* Add space before buttons */
 }
 
 .buttons {
