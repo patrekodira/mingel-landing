@@ -12,7 +12,18 @@
             padding: 0;
             color: #2D2D2D;
             background-color: #FDF6F2;
-            overflow-y: scroll; /* Ensures vertical scrolling */
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #FFFFFF;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            flex: 1; /* Pushes footer to the bottom */
         }
         h1 {
             font-size: 28px;
@@ -25,13 +36,23 @@
             font-size: 20px;
             margin-bottom: 15px;
         }
-        .container {
-            max-width: 800px;
-            margin: 0 auto;
-            padding: 20px;
-            background-color: #FFFFFF;
-            border-radius: 10px;
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        footer {
+            text-align: center;
+            padding: 15px 0;
+            background-color: #FDF6F2;
+            box-shadow: 0 -4px 10px rgba(0, 0, 0, 0.1);
+            color: #FC176A;
+            font-size: 14px;
+            border-top-left-radius: 10%;
+            border-top-right-radius: 10%;
+        }
+        footer a {
+            color: #FC176A;
+            text-decoration: none;
+            margin: 0 10px;
+        }
+        footer a:hover {
+            text-decoration: underline;
         }
     </style>
 </head>
@@ -153,5 +174,13 @@ you may submit a verifiable request to close your account and we will delete per
 
 if you would like to exercise any of these rights, please contact us. for more information about these rights, please contact us. don’t hesitate to contact us if you have any questions via email business@mingel.co</p>
     </div>
+    <footer>
+        <p>
+            <a href="/terms">Terms & Conditions</a> |
+            <a href="/eula">EULA</a> |
+            <a href="/contact">Contact</a> |
+            ©mingel 2024
+        </p>
+    </footer>
 </body>
 </html>
