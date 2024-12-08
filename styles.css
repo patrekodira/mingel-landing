@@ -3,9 +3,10 @@ body {
     margin: 0;
     font-family: 'Poppins', sans-serif;
     background-color: #FDF6F2;
-    overflow: hidden;
+    overflow-x: hidden; /* Prevent horizontal scrolling */
 }
 
+/* Mobile and Default Styles */
 #animation-container {
     position: absolute;
     top: 0;
@@ -21,13 +22,13 @@ body {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    width: 270px; /* Correct size */
+    width: 270px;
     height: 270px;
     z-index: 2;
 }
 
 #content {
-    display: none; /* Hidden by default until intro animation completes */
+    display: none;
     position: relative;
     z-index: 3;
     padding: 20px;
@@ -45,40 +46,41 @@ body {
 
 .text-container {
     margin-top: 60px;
-    margin-bottom: 20px; /* Adjust for buttons */
-    padding-left: 15px; /* Consistent alignment for text */
+    margin-bottom: 20px;
+    padding-left: 15px;
 }
 
 .tagline {
-    font-size: 30px; /* Explicitly set */
-    font-weight: 600; /* Poppins SemiBold */
+    font-size: 30px;
+    font-weight: 600;
     color: #2D2D2D;
-    margin: 0; /* Remove unnecessary margins */
+    margin: 0;
 }
 
 .sub-tagline {
-    font-size: 20px; /* Adjust sub-headline size */
-    font-weight: 400; /* Poppins Regular */
-    color: #FC176A; /* Hot pink */
-    margin-top: 5px; /* Smaller spacing between headline and sub-headline */
-    margin-bottom: 20px; /* Add space before buttons */
+    font-size: 20px;
+    font-weight: 400;
+    color: #FC176A;
+    margin-top: 5px;
+    margin-bottom: 20px;
 }
 
 .buttons {
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 20px; /* Adds spacing between buttons */
-    margin-top: 50px; /* Ensures space between text and buttons */
+    gap: 20px;
+    margin-top: 50px;
 }
 
 .buttons .btn img {
-    width: 170px; /* Ensure consistent button sizes */
+    width: 170px;
 }
 
+/* Footer */
 footer {
-    display: none; /* Hidden by default until intro animation ends */
-    position: fixed; /* Ensures footer stays at the bottom */
+    display: none;
+    position: fixed;
     bottom: 0;
     width: 100%;
     background-color: #FDF6F2;
@@ -87,7 +89,7 @@ footer {
     border-top-right-radius: 10%;
     text-align: center;
     padding: 15px 0;
-    z-index: 3; /* Ensures footer stays above the animation */
+    z-index: 3;
 }
 
 footer p {
@@ -122,34 +124,112 @@ footer a:hover {
     border-radius: 10px;
 }
 
-/* General Styling for Privacy Policy */
 h2 {
-    font-size: 20px; /* Ensure consistent size for headings */
-    font-weight: 600; /* Poppins SemiBold */
+    font-size: 20px;
+    font-weight: 600;
     color: #2D2D2D;
-    margin-top: 20px; /* Add spacing above headings */
-    margin-bottom: 10px; /* Add spacing below headings */
+    margin-top: 20px;
+    margin-bottom: 10px;
 }
 
 p {
-    font-size: 16px; /* Ensure consistent size for paragraph text */
-    font-weight: 400; /* Poppins Regular */
-    color: #2D2D2D;
-    line-height: 1.5; /* Improve readability with line spacing */
-    margin-bottom: 15px; /* Add spacing between paragraphs */
-}
-
-ul {
-    margin-left: 20px; /* Indent unordered lists */
-    margin-bottom: 15px;
-    list-style-type: disc; /* Use bullet points for lists */
-}
-
-li {
-    font-size: 16px; /* Match paragraph size */
+    font-size: 16px;
     font-weight: 400;
     color: #2D2D2D;
     line-height: 1.5;
-    margin-bottom: 10px; /* Add spacing between list items */
+    margin-bottom: 15px;
 }
 
+ul {
+    margin-left: 20px;
+    margin-bottom: 15px;
+    list-style-type: disc;
+}
+
+li {
+    font-size: 16px;
+    font-weight: 400;
+    color: #2D2D2D;
+    line-height: 1.5;
+    margin-bottom: 10px;
+}
+
+/* Desktop Styles */
+@media (min-width: 768px) {
+    body {
+        background-color: #F8DDE3; /* Updated desktop background */
+    }
+
+    #pulse-logo-desktop {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 350px;
+        height: 350px;
+        z-index: 2;
+    }
+
+    #content {
+        margin-top: 150px;
+        padding: 40px;
+    }
+
+    #desktop-animation-container {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        z-index: 1;
+        pointer-events: none;
+    }
+
+    #header {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 80px;
+        background: linear-gradient(180deg, rgba(45, 45, 45, 1) 0%, rgba(45, 45, 45, 0) 100%);
+        z-index: 5;
+        display: flex;
+        align-items: center;
+        padding: 0 20px;
+        box-sizing: border-box;
+    }
+
+    #header img {
+        width: 50px;
+        margin-right: 10px;
+    }
+
+    #header span {
+        font-size: 24px;
+        font-weight: 600;
+        color: #F8DDE3;
+    }
+
+    .tagline {
+        font-size: 50px;
+        font-weight: 600;
+        color: #2D2D2D;
+        opacity: 1;
+        transition: opacity 0.5s ease;
+    }
+
+    .buttons {
+        flex-direction: row;
+        gap: 40px;
+    }
+
+    .buttons .btn img {
+        width: 200px;
+    }
+
+    footer {
+        background-color: transparent;
+        position: relative;
+        margin-top: 50px;
+    }
+}
