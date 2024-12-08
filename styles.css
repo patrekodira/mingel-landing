@@ -23,8 +23,8 @@ body {
     left: 50%;
     transform: translate(-50%, -50%);
     z-index: 2; /* Above background animation */
-    width: 100px; /* Fixed the size back to original */
-    height: 100px;
+    width: 80px; /* Adjusted smaller size */
+    height: 80px;
 }
 
 /* Main Content Styling */
@@ -44,7 +44,7 @@ body {
 }
 
 .top-logo img {
-    width: 120px; /* Adjust size */
+    width: 40px; /* Adjust size to make it much smaller */
     height: auto;
 }
 
@@ -78,7 +78,7 @@ body {
 /* Footer Styling */
 footer {
     display: none; /* Hidden initially */
-    position: fixed; /* Changed to fixed for sticking to the bottom */
+    position: fixed; /* Stuck to the bottom */
     bottom: 0;
     width: 100%;
     background-color: #FDF6F2;
