@@ -16,43 +16,40 @@ body {
     pointer-events: none;
 }
 
-#pulse-logo {
+#logo-container {
     position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    width: 270px; /* Correct size */
-    height: 270px;
+    width: 150px;
+    height: 150px;
     z-index: 2;
 }
 
+/* Main Content Styling */
 #content {
-    display: none; /* Hidden by default until intro animation completes */
     position: relative;
-    z-index: 3;
+    z-index: 2;
     padding: 20px;
     color: #2D2D2D;
 }
 
-#logo-mingel {
-    text-align: center;
-    margin-bottom: 15px;
-}
-
-#logo-mingel img {
-    width: 100px;
+.logo-mingel img {
+    display: block;
+    margin: 0 auto;
+    width: 80px; /* Adjust as needed */
 }
 
 .text-container {
-    margin-top: 50px;
+    margin-top: 30px;
     margin-bottom: 40px;
 }
 
 .tagline {
-    font-size: 30px;
-    font-weight: 600;
+    font-size: 30px; /* Adjusted size */
+    font-weight: 600; /* Poppins SemiBold */
     color: #2D2D2D;
-    text-align: left;
+    text-align: left; /* Aligned to the left */
     margin-left: 15px;
 }
 
@@ -67,9 +64,9 @@ body {
     width: 160px;
 }
 
+/* Footer Styling */
 footer {
-    display: none; /* Hidden by default until intro animation ends */
-    position: fixed; /* Ensures footer stays at the bottom */
+    position: absolute;
     bottom: 0;
     width: 100%;
     background-color: #FDF6F2;
@@ -78,14 +75,13 @@ footer {
     border-top-right-radius: 10%;
     text-align: center;
     padding: 15px 0;
-    z-index: 3; /* Ensures footer stays above the animation */
 }
 
 footer p {
     margin: 0;
     color: #FC176A;
-    font-size: 10px;
-    font-weight: 400;
+    font-size: 10px; /* Adjusted size */
+    font-weight: 400; /* Poppins Regular */
 }
 
 footer a {
