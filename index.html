@@ -63,11 +63,11 @@
             path: 'mingel_logo_pulse.json' // Ensure correct path
         });
 
-        // Show main content after 3 seconds and hide the pulse animation
+        // Hide the pulsating logo after 3 seconds and show the landing page
         setTimeout(() => {
-            document.getElementById("pulse-logo").style.display = "none";
-            document.getElementById("content").style.display = "block";
-            document.getElementById("footer").style.display = "block";
+            document.getElementById("pulse-logo").style.display = "none"; // Hide pulsating logo
+            document.getElementById("content").style.display = "block"; // Show landing page content
+            document.getElementById("footer").style.display = "block"; // Show footer
         }, 3000);
     </script>
 </body>
