@@ -44,7 +44,7 @@ body {
 }
 
 .text-container {
-    margin-top: 40px;
+    margin-top: 60px;
     margin-bottom: 20px; /* Adjust for buttons */
     padding-left: 15px; /* Consistent alignment for text */
 }
@@ -61,7 +61,7 @@ body {
     font-weight: 400; /* Poppins Regular */
     color: #FC176A; /* Hot pink */
     margin-top: 5px; /* Smaller spacing between headline and sub-headline */
-    margin-bottom: 10px; /* Add space before buttons */
+    margin-bottom: 20px; /* Add space before buttons */
 }
 
 .buttons {
