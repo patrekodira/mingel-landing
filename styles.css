@@ -50,7 +50,7 @@ body {
 }
 
 .tagline {
-    font-size: 32px; /* Explicitly set */
+    font-size: 30px; /* Explicitly set */
     font-weight: 600; /* Poppins SemiBold */
     color: #2D2D2D;
     margin: 0; /* Remove unnecessary margins */
