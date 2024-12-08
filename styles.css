@@ -74,7 +74,7 @@ body {
 
 @media screen and (min-width: 1280px) {
     #logo-mingel {
-        display: none; /* Hide on desktop screens */
+        display: none !important; /* Hide on desktop screens */
     }
 }
 
