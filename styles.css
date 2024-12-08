@@ -64,7 +64,8 @@ body {
 }
 
 .buttons .btn img {
-    width: 160px;
+    width: 160px; /* Ensures both images are the same width */
+    height: auto; /* Maintains the image's aspect ratio */
 }
 
 footer {
