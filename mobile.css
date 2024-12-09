@@ -84,7 +84,7 @@ body {
 
 /* Footer */
 footer {
-    display: block; /* Visible by default on mobile */
+    display: none; /* Hidden by default */
     position: fixed;
     bottom: 0;
     width: 100%;
