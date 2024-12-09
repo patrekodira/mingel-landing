@@ -6,6 +6,13 @@ body {
     overflow: hidden; /* Default for mobile */
 }
 
+/* Enable scrolling for desktop */
+@media screen and (min-width: 1280px) {
+    body {
+        overflow-y: auto;
+    }
+}
+
 /* Desktop Header */
 #desktop-header {
     display: none; /* Hidden by default */
@@ -35,7 +42,6 @@ body {
     width: auto; /* Maintain the logo's aspect ratio */
 }
 
-/* Show header only for desktop after animation */
 @media screen and (min-width: 1280px) {
     #desktop-header {
         display: flex; /* Only display on desktop */
@@ -60,6 +66,13 @@ body {
     width: 270px;
     height: 270px;
     z-index: 2;
+}
+
+@media screen and (min-width: 1280px) {
+    #pulse-logo {
+        width: 350px;
+        height: 350px;
+    }
 }
 
 #content {
@@ -159,19 +172,6 @@ footer a:hover {
 @media screen and (min-width: 1280px) {
     footer {
         display: none !important;
-    }
-}
-
-/* Desktop Styles */
-@media (min-width: 1280px) {
-    body {
-        background-color: #F8DDE3;
-        overflow-y: auto; /* Allow scrolling for desktop */
-    }
-
-    #pulse-logo {
-        width: 350px;
-        height: 350px;
     }
 }
 
