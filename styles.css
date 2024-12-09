@@ -2,14 +2,14 @@
 body {
     margin: 0;
     font-family: 'Poppins', sans-serif;
-    background-color: #FDF6F2;
+    background-color: #FDF6F2; /* Default background for the page */
     overflow: hidden; /* Default for mobile */
 }
 
 /* Enable scrolling for desktop */
 @media screen and (min-width: 1280px) {
     body {
-        overflow-y: auto;
+        overflow-y: auto; /* Allow scrolling for desktop */
     }
 }
 
@@ -44,10 +44,11 @@ body {
 
 @media screen and (min-width: 1280px) {
     #desktop-header {
-        display: block; /* Only display on desktop */
+        display: flex; /* Only display on desktop */
     }
 }
 
+/* Animation Container */
 #animation-container {
     position: absolute;
     top: 0;
@@ -56,7 +57,7 @@ body {
     height: 100%;
     z-index: 1;
     pointer-events: none;
-    background-color: #FDF6F2; /* Set seashell background */
+    background-color: #FDF6F2; /* Corrected to seashell color */
 }
 
 #pulse-logo {
@@ -77,14 +78,15 @@ body {
 }
 
 #content {
-    display: none;
+    display: none; /* Hidden during animation */
     position: relative;
     z-index: 3;
     padding: 20px;
-    color: #FDF6F2;
-    background-color: #FDF6F2; /* Same seashell background */
+    color: #2D2D2D;
+    background-color: #FDF6F2; /* Correct background color for landing page */
 }
 
+/* Hide logo in desktop */
 #logo-mingel {
     display: block; /* Default visibility for mobile */
 }
