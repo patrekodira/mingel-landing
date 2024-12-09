@@ -36,7 +36,7 @@ body {
     height: 100%;
     z-index: 1;
     pointer-events: none;
-    background-color: #FDF6F2; /* Seashell color */
+    background-color: #FDF6F2; /* Same as landing page background */
 }
 
 /* Pulsating Logo */
@@ -45,27 +45,20 @@ body {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    width: 350px;
+    width: 350px; /* Adjust size for desktop */
     height: 350px;
     z-index: 2;
 }
 
 /* Main Content */
 #content {
-    display: block;
+    display: none; /* Hidden during animation */
     position: relative;
     z-index: 3;
+    padding: 20px;
     color: #2D2D2D;
-    text-align: center;
-    background-color: #FDF6F2; /* Match the animation background */
-    padding: 20px 0;
-    height: 100vh;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+    background-color: #FDF6F2; /* Correct background color */
 }
-
 /* Hide logo in desktop */
 #logo-mingel {
     display: none; /* Hidden on desktop */
