@@ -60,15 +60,12 @@
         const animationContainer = document.getElementById('animation-container');
         const pulseLogoContainer = document.getElementById('pulse-logo');
 
-        // Load animations for mobile and desktop
         lottie.loadAnimation({
             container: animationContainer,
             renderer: 'svg',
             loop: true,
             autoplay: true,
-            path: window.innerWidth >= 1280 
-                ? 'mingel_animation_desktop.json' 
-                : 'mingel_animation_main.json'
+            path: window.innerWidth >= 1280 ? 'mingel_animation_desktop.json' : 'mingel_animation_main.json'
         });
 
         lottie.loadAnimation({
@@ -76,34 +73,22 @@
             renderer: 'svg',
             loop: true,
             autoplay: true,
-            path: window.innerWidth >= 1280
-                ? 'mingel_logo_pulse_desktop.json'
-                : 'mingel_logo_pulse.json'
+            path: window.innerWidth >= 1280 ? 'mingel_logo_pulse_desktop.json' : 'mingel_logo_pulse.json'
         });
 
-        // Handle display timing
+        // Hide header during animation
         const header = document.getElementById('desktop-header');
-        const content = document.getElementById("content");
-        const footer = document.getElementById("footer");
-
-        // Hide header during initial animation
         header.style.display = 'none';
 
         setTimeout(() => {
-            // Hide pulsating logo and show relevant content
-            document.getElementById("pulse-logo").style.display = "none"; 
-            content.style.display = "block"; 
+            document.getElementById("pulse-logo").style.display = "none"; // Hide pulsating logo
+            document.getElementById("content").style.display = "block"; // Show landing page content
+            document.getElementById("footer").style.display = window.innerWidth >= 1280 ? "none" : "block"; // Show footer for mobile
 
-            // Show footer only for mobile
-            if (window.innerWidth < 1280) {
-                footer.style.display = "block";
-            }
-
-            // Show header for desktop
             if (window.innerWidth >= 1280) {
-                header.style.display = "flex";
+                header.style.display = "flex"; // Show header only for desktop
             }
-        }, 3000); // 3 seconds for intro animation
+        }, 3000);
     </script>
 </body>
 </html>
