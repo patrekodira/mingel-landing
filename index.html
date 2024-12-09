@@ -19,7 +19,7 @@
     <!-- Animated Background -->
     <div id="animation-container"></div>
 
-    <!-- Pulsating Logo (Mobile Only) -->
+    <!-- Pulsating Logo -->
     <div id="pulse-logo"></div>
 
     <!-- Main Content -->
@@ -41,7 +41,17 @@
         </div>
     </div>
 
-    <!-- Empty Section with 2D2D2D Background for Desktop -->
+    <!-- Footer -->
+    <footer id="footer">
+        <p>
+            <a href="privacy-policy.html">privacy policy</a> | 
+            <a href="/terms">terms & conditions</a> | 
+            <a href="/eula">eula</a> | 
+            © mingel 2024
+        </p>
+    </footer>
+
+    <!-- Section for Scroll on Desktop -->
     <section id="scroll-section" class="desktop-only"></section>
 
     <script>
@@ -69,9 +79,6 @@
         const header = document.getElementById('desktop-header');
         header.style.display = 'none';
 
-        // Change the background color for desktop after animation
-        const body = document.body;
-
         setTimeout(() => {
             document.getElementById("pulse-logo").style.display = "none"; // Hide pulsating logo
             document.getElementById("content").style.display = "block"; // Show landing page content
@@ -79,7 +86,6 @@
 
             if (window.innerWidth >= 1280) {
                 header.style.display = "flex"; // Show header only for desktop
-                body.style.backgroundColor = "#FDF6F2"; // Change to seashell background after animation
             }
         }, 3000);
     </script>
