@@ -2,29 +2,8 @@
 body {
     margin: 0;
     font-family: 'Poppins', sans-serif;
-    background-color: #FDF6F2; /* Default background for desktop */
-    overflow-y: auto; /* Allow scrolling on desktop */
-}
-
-/* Desktop Header */
-#desktop-header {
-    display: flex; /* Visible only on desktop */
-    position: fixed;
-    top: 0;
-    width: 100%;
-    height: 90px;
-    background: linear-gradient(to bottom, rgba(45, 45, 45, 1), rgba(45, 45, 45, 0));
-    z-index: 3; /* Above animations */
-    align-items: center;
-    justify-content: flex-start;
-    padding: 0 20px;
-    box-sizing: border-box;
-    color: #2d2d2d;
-}
-
-.header-content img {
-    height: 60px;
-    width: auto;
+    background-color: #FDF6F2; /* Seashell color */
+    overflow: hidden; /* Default for no scrolling during animation */
 }
 
 /* Animation Container */
@@ -33,61 +12,46 @@ body {
     top: 0;
     left: 0;
     width: 100%;
-    height: 100%;
+    height: 100vh; /* Full viewport height */
     z-index: 1;
     pointer-events: none;
-    background-color: #FDF6F2; /* Same as landing page background */
+    background-color: #FDF6F2; /* Seamless background */
 }
 
-/* Pulsating Logo */
-#pulse-logo {
+/* Centered Text for Desktop */
+#centered-text {
     position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    width: 350px; /* Adjust size for desktop */
-    height: 350px;
-    z-index: 2;
+    text-align: center;
+    z-index: 2; /* Above animation */
+    color: #2D2D2D; /* Dark text color */
 }
 
-/* Main Content */
-#content {
-    display: none; /* Hidden during animation */
-    position: relative;
-    z-index: 3;
-    padding: 20px;
-    color: #2D2D2D;
-    background-color: #FDF6F2; /* Correct background color */
-}
-/* Hide logo in desktop */
-#logo-mingel {
-    display: none; /* Hidden on desktop */
-}
-
-/* Tagline */
-.tagline {
-    font-size: 50px;
-    font-weight: 600;
-    color: #2D2D2D;
+#centered-text .tagline {
+    font-size: 50px; /* Larger font for desktop */
+    font-weight: 600; /* Bold headline */
     margin: 0;
 }
 
-.sub-tagline {
-    font-size: 30px;
+#centered-text .sub-tagline {
+    font-size: 30px; /* Adjusted sub-tagline size */
     font-weight: 400;
-    color: #FC176A;
+    color: #FC176A; /* Hot pink */
     margin-top: 10px;
-    margin-bottom: 20px;
 }
 
-/* Hide App Store and Play Store Buttons */
-.buttons {
-    display: none;
+/* Allow Scrolling After Animation */
+@media screen and (min-width: 1280px) {
+    body {
+        overflow-y: auto; /* Enable scrolling for desktop */
+    }
 }
 
-/* Scroll Section */
+/* Section Below Animation */
 #scroll-section {
-    display: block;
-    background-color: #2D2D2D;
-    height: 100vh;
+    display: block; /* Visible after animation */
+    background-color: #2D2D2D; /* Dark grey background */
+    height: 100vh; /* Full viewport height */
 }
