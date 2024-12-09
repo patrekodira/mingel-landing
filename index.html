@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mingel - Landing</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bodymovin/5.9.6/lottie.min.js"></script>
+</head>
+<body>
+    <!-- Desktop Header -->
+    <header id="desktop-header">
+        <div class="header-content">
+            <img src="logo_mingel.png" alt="Mingel Logo">
+        </div>
+    </header>
+
+    <!-- Animated Background -->
+    <div id="animation-container"></div>
+
+    <!-- Pulsating Logo -->
+    <div id="pulse-logo"></div>
+
+    <!-- Main Content -->
+    <div id="content">
+        <div id="logo-mingel">
+            <img src="logo_mingel.png" alt="Mingel Logo">
+        </div>
+        <div class="text-container">
+            <p class="tagline">expand your circle one swipe at a time.</p>
+            <p class="sub-tagline">swipe, match, have fun!</p>
+        </div>
+        <div class="buttons">
+            <a href="https://apps.apple.com/hr/app/mingel-friends-events-app/id6569245358" class="btn">
+                <img src="app-store.png" alt="App Store">
+            </a>
+            <a href="https://play.google.com/store/apps/details?id=com.mingel.regular.user&hl=en" class="btn">
+                <img src="play-store.png" alt="Play Store">
+            </a>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer id="footer">
+        <p>
+            <a href="privacy-policy.html">privacy policy</a> | 
+            <a href="/terms">terms & conditions</a> | 
+            <a href="/eula">eula</a> | 
+            © mingel 2024
+        </p>
+    </footer>
+    
+    <!-- Empty Section with 2D2D2D Background for Desktop -->
+    <section id="scroll-section" class="desktop-only"></section>
+
+    <script>
+        // Load animations
+        var animationContainer = document.getElementById('animation-container');
+        var pulseLogoContainer = document.getElementById('pulse-logo');
+
+        lottie.loadAnimation({
+            container: animationContainer,
+            renderer: 'svg',
+            loop: true,
+            autoplay: true,
+            path: window.innerWidth >= 1280 ? 'mingel_animation_desktop.json' : 'mingel_animation_main.json'
+        });
+
+        lottie.loadAnimation({
+            container: pulseLogoContainer,
+            renderer: 'svg',
+            loop: true,
+            autoplay: true,
+            path: 'mingel_logo_pulse.json'
+        });
+
+        // Hide header during animation
+        const header = document.getElementById('desktop-header');
+        header.style.display = 'none';
+
+        setTimeout(() => {
+            document.getElementById("pulse-logo").style.display = "none"; // Hide pulsating logo
+            document.getElementById("content").style.display = "block"; // Show landing page content
+            document.getElementById("footer").style.display = window.innerWidth >= 1280 ? "none" : "block"; // Show footer for mobile
+
+            if (window.innerWidth >= 1280) {
+                header.style.display = "flex"; // Show header only for desktop
+            }
+        }, 3000);
+    </script>
+</body>
+</html>
