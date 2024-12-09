@@ -5,8 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Mingel - Landing</title>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="styles-mobile.css" media="screen and (max-width: 1280px)">
-    <link rel="stylesheet" href="styles-desktop.css" media="screen and (min-width: 1280px)">
+    <link rel="stylesheet" href="mobile.css" media="screen and (max-width: 1279px)">
+    <link rel="stylesheet" href="desktop.css" media="screen and (min-width: 1280px)">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/bodymovin/5.9.6/lottie.min.js"></script>
 </head>
 <body>
@@ -60,12 +60,15 @@
         const animationContainer = document.getElementById('animation-container');
         const pulseLogoContainer = document.getElementById('pulse-logo');
 
+        // Load animations for mobile and desktop
         lottie.loadAnimation({
             container: animationContainer,
             renderer: 'svg',
             loop: true,
             autoplay: true,
-            path: window.innerWidth >= 1280 ? 'mingel_animation_desktop.json' : 'mingel_animation_main.json'
+            path: window.innerWidth >= 1280 
+                ? 'mingel_animation_desktop.json' 
+                : 'mingel_animation_main.json'
         });
 
         lottie.loadAnimation({
@@ -76,19 +79,29 @@
             path: 'mingel_logo_pulse.json'
         });
 
-        // Hide header during animation
+        // Handle display timing
         const header = document.getElementById('desktop-header');
+        const content = document.getElementById("content");
+        const footer = document.getElementById("footer");
+
+        // Hide header during initial animation
         header.style.display = 'none';
 
         setTimeout(() => {
-            document.getElementById("pulse-logo").style.display = "none"; // Hide pulsating logo
-            document.getElementById("content").style.display = "block"; // Show landing page content
-            document.getElementById("footer").style.display = window.innerWidth >= 1280 ? "none" : "block"; // Show footer for mobile
+            // Hide pulsating logo and show relevant content
+            document.getElementById("pulse-logo").style.display = "none"; 
+            content.style.display = "block"; 
 
-            if (window.innerWidth >= 1280) {
-                header.style.display = "flex"; // Show header only for desktop
+            // Show footer only for mobile
+            if (window.innerWidth < 1280) {
+                footer.style.display = "block";
             }
-        }, 3000);
+
+            // Show header for desktop
+            if (window.innerWidth >= 1280) {
+                header.style.display = "flex";
+            }
+        }, 3000); // 3 seconds for intro animation
     </script>
 </body>
 </html>
