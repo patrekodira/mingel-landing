@@ -3,7 +3,7 @@ body {
     margin: 0;
     font-family: 'Poppins', sans-serif;
     background-color: #FDF6F2; /* Default background for the page */
-    overflow: hidden; /* Default for mobile */
+    overflow: hidden; /* Prevent scrolling during animation */
 }
 
 /* Enable scrolling for desktop */
@@ -57,7 +57,7 @@ body {
     height: 100%;
     z-index: 1;
     pointer-events: none;
-    background-color: #FDF6F2; /* Corrected to seashell color */
+    background-color: #FDF6F2; /* Background matches the seashell color */
 }
 
 #pulse-logo {
@@ -80,15 +80,15 @@ body {
 /* Main Content (Landing Page Content) */
 #content {
     display: none; /* Hidden during animation */
-    position: absolute; /* Overlay on top of animation */
+    position: absolute; /* Overlay content */
     top: 0;
     left: 0;
     width: 100%;
     height: 100%; /* Match the viewport height */
     z-index: 3;
     color: #2D2D2D;
-    text-align: center; /* Center text */
-    background-color: transparent; /* Remove the block effect */
+    text-align: center;
+    background-color: transparent; /* Remove background block effect */
 }
 
 /* Hide logo in desktop */
@@ -106,8 +106,9 @@ body {
     width: 130px;
 }
 
+/* Center content inside the page */
 .text-container {
-    position: absolute; /* Center content relative to the viewport */
+    position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
