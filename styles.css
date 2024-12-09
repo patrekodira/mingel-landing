@@ -2,7 +2,7 @@
 body {
     margin: 0;
     font-family: 'Poppins', sans-serif;
-    background-color: #FDF6F2;
+    background-color: #FDF6F2; /* Default seashell background */
     overflow: hidden; /* Default for mobile */
 }
 
@@ -10,6 +10,7 @@ body {
 @media screen and (min-width: 1280px) {
     body {
         overflow-y: auto;
+        background-color: #FDF6F2; /* Ensure seashell background remains after animation */
     }
 }
 
@@ -35,9 +36,9 @@ body {
 }
 
 .header-content img {
-    height: calc(100% - 20px); /* Dynamically adjust logo size */
+    height: calc(100% - 20px);
     max-height: 90px;
-    width: auto; /* Maintain aspect ratio */
+    width: auto;
 }
 
 @media screen and (min-width: 1280px) {
