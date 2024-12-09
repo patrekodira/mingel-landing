@@ -86,14 +86,10 @@
         header.style.display = 'none';
 
         setTimeout(() => {
-            document.getElementById("pulse-logo").style.display = "none"; // Hide pulsating logo
-            document.getElementById("content").style.display = "block"; // Show landing page content
-            document.getElementById("footer").style.display = window.innerWidth >= 1280 ? "none" : "block"; // Show footer for mobile
-
-            if (window.innerWidth >= 1280) {
-                header.style.display = "flex"; // Show header only for desktop
-            }
-        }, 3000);
+    document.getElementById("pulse-logo").style.display = "none"; // Hide pulsating logo
+    document.getElementById("content").style.display = "block"; // Show landing page content
+    document.getElementById("footer").style.display = "block"; // Show footer
+}, 3000);
     </script>
 </body>
 </html>
