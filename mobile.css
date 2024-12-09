@@ -52,6 +52,7 @@ body {
     margin-top: 60px;
     margin-bottom: 20px;
     padding-left: 15px;
+    text-align: left; /* Align content to the left */
 }
 
 .tagline {
