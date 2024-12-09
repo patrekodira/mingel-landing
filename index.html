@@ -20,7 +20,10 @@
     <!-- Animated Background -->
     <div id="animation-container"></div>
 
-    <!-- Centered Text -->
+    <!-- Pulsating Logo -->
+    <div id="pulse-logo"></div>
+
+    <!-- Centered Content -->
     <div id="centered-text">
         <p class="tagline">expand your circle one swipe at a time.</p>
         <p class="sub-tagline">swipe, match, have fun!</p>
@@ -52,13 +55,22 @@
             path: window.innerWidth >= 1280 ? 'mingel_animation_desktop.json' : 'mingel_animation_main.json'
         });
 
-        // Hide header during animation
+        lottie.loadAnimation({
+            container: pulseLogoContainer,
+            renderer: 'svg',
+            loop: true,
+            autoplay: true,
+            path: 'mingel_logo_pulse.json'
+        });
+
+        // Handle visibility for animation and text
         const header = document.getElementById('desktop-header');
         header.style.display = 'none';
 
         setTimeout(() => {
+            document.getElementById("pulse-logo").style.display = "none"; // Hide pulse animation
             document.getElementById("centered-text").style.display = "block"; // Show headline
-            header.style.display = "flex"; // Show header for desktop
+            header.style.display = window.innerWidth >= 1280 ? "flex" : "none"; // Show header for desktop
         }, 3000);
     </script>
 </body>
