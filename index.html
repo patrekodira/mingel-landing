@@ -11,10 +11,10 @@
 <body>
     <!-- Desktop Header -->
     <header id="desktop-header">
-    <div class="header-content">
-        <img src="logo_mingel.png" alt="Mingel Logo">
-    </div>
-</header>
+        <div class="header-content">
+            <img src="logo_mingel.png" alt="Mingel Logo">
+        </div>
+    </header>
 
     <!-- Animated Background -->
     <div id="animation-container"></div>
@@ -52,40 +52,42 @@
     </footer>
     
     <!-- Empty Section with 2D2D2D Background for Desktop -->
-<section id="scroll-section" class="desktop-only"></section>
+    <section id="scroll-section" class="desktop-only"></section>
 
     <script>
-    // Load animations
-    var animationContainer = document.getElementById('animation-container');
-    var pulseLogoContainer = document.getElementById('pulse-logo');
+        // Load animations
+        var animationContainer = document.getElementById('animation-container');
+        var pulseLogoContainer = document.getElementById('pulse-logo');
 
-    lottie.loadAnimation({
-        container: animationContainer,
-        renderer: 'svg',
-        loop: true,
-        autoplay: true,
-        path: window.innerWidth >= 1280 ? 'mingel_animation_desktop.json' : 'mingel_animation_main.json'
-    });
+        lottie.loadAnimation({
+            container: animationContainer,
+            renderer: 'svg',
+            loop: true,
+            autoplay: true,
+            path: window.innerWidth >= 1280 ? 'mingel_animation_desktop.json' : 'mingel_animation_main.json'
+        });
 
-    lottie.loadAnimation({
-        container: pulseLogoContainer,
-        renderer: 'svg',
-        loop: true,
-        autoplay: true,
-        path: 'mingel_logo_pulse.json'
-    });
+        lottie.loadAnimation({
+            container: pulseLogoContainer,
+            renderer: 'svg',
+            loop: true,
+            autoplay: true,
+            path: 'mingel_logo_pulse.json'
+        });
 
-    // Hide header during animation
-    const header = document.getElementById('desktop-header');
-    header.style.display = 'none';
+        // Hide header during animation
+        const header = document.getElementById('desktop-header');
+        header.style.display = 'none';
 
-    setTimeout(() => {
-        document.getElementById("pulse-logo").style.display = "none"; // Hide pulsating logo
-        document.getElementById("content").style.display = "block"; // Show landing page content
-        document.getElementById("footer").style.display = "block"; // Show footer
+        setTimeout(() => {
+            document.getElementById("pulse-logo").style.display = "none"; // Hide pulsating logo
+            document.getElementById("content").style.display = "block"; // Show landing page content
+            document.getElementById("footer").style.display = window.innerWidth >= 1280 ? "none" : "block"; // Show footer for mobile
 
-        if (window.innerWidth >= 1280) {
-            header.style.display = "flex"; // Show header only for desktop
-        }
-    }, 3000);
-</script>
+            if (window.innerWidth >= 1280) {
+                header.style.display = "flex"; // Show header only for desktop
+            }
+        }, 3000);
+    </script>
+</body>
+</html>
