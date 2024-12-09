@@ -115,6 +115,13 @@ body {
     width: 170px;
 }
 
+/* Hide buttons on desktop */
+@media screen and (min-width: 1280px) {
+    .buttons {
+        display: none !important;
+    }
+}
+
 footer {
     display: none;
     position: fixed;
