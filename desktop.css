@@ -2,8 +2,28 @@
 body {
     margin: 0;
     font-family: 'Poppins', sans-serif;
-    background-color: #FDF6F2; /* Seashell color */
-    overflow: hidden; /* Default for no scrolling during animation */
+    background-color: #FDF6F2;
+    overflow-y: auto; /* Allow scrolling on desktop */
+}
+
+/* Desktop Header */
+#desktop-header {
+    display: none;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    height: 90px;
+    background: linear-gradient(to bottom, rgba(45, 45, 45, 1), rgba(45, 45, 45, 0));
+    z-index: 3;
+    align-items: center;
+    justify-content: flex-start;
+    padding: 0 20px;
+    box-sizing: border-box;
+}
+
+.header-content img {
+    height: 60px;
+    width: auto;
 }
 
 /* Animation Container */
@@ -14,44 +34,35 @@ body {
     width: 100%;
     height: 100vh; /* Full viewport height */
     z-index: 1;
-    pointer-events: none;
-    background-color: #FDF6F2; /* Seamless background */
+    background-color: #FDF6F2;
 }
 
-/* Centered Text for Desktop */
+/* Centered Text */
 #centered-text {
+    display: none;
     position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
     text-align: center;
-    z-index: 2; /* Above animation */
-    color: #2D2D2D; /* Dark text color */
+    z-index: 2;
 }
 
 #centered-text .tagline {
-    font-size: 50px; /* Larger font for desktop */
-    font-weight: 600; /* Bold headline */
+    font-size: 50px;
+    font-weight: 600;
     margin: 0;
 }
 
 #centered-text .sub-tagline {
-    font-size: 30px; /* Adjusted sub-tagline size */
+    font-size: 30px;
     font-weight: 400;
-    color: #FC176A; /* Hot pink */
+    color: #FC176A;
     margin-top: 10px;
 }
 
-/* Allow Scrolling After Animation */
-@media screen and (min-width: 1280px) {
-    body {
-        overflow-y: auto; /* Enable scrolling for desktop */
-    }
-}
-
-/* Section Below Animation */
+/* Scroll Section */
 #scroll-section {
-    display: block; /* Visible after animation */
-    background-color: #2D2D2D; /* Dark grey background */
-    height: 100vh; /* Full viewport height */
+    background-color: #2D2D2D;
+    height: 100vh;
 }
