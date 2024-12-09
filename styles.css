@@ -44,7 +44,7 @@ body {
 
 @media screen and (min-width: 1280px) {
     #desktop-header {
-        display: flex; /* Only display on desktop */
+        display: block; /* Only display on desktop */
     }
 }
 
@@ -81,7 +81,7 @@ body {
     position: relative;
     z-index: 3;
     padding: 20px;
-    color: #2D2D2D;
+    color: #FDF6F2;
     background-color: #FDF6F2; /* Same seashell background */
 }
 
