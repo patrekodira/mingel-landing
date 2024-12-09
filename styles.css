@@ -26,8 +26,6 @@ body {
     justify-content: flex-start;
     padding: 0 20px;
     box-sizing: border-box;
-    color: #2d2d2d;
-    font-family: 'Poppins', sans-serif;
 }
 
 .header-content {
@@ -37,9 +35,9 @@ body {
 }
 
 .header-content img {
-    height: calc(100% - 20px); /* Dynamically adjust logo size to fit within the header, leaving padding */
-    max-height: 90px; /* Ensure it doesn't exceed the header's height */
-    width: auto; /* Maintain the logo's aspect ratio */
+    height: calc(100% - 20px); /* Dynamically adjust logo size */
+    max-height: 90px;
+    width: auto; /* Maintain aspect ratio */
 }
 
 @media screen and (min-width: 1280px) {
@@ -48,7 +46,7 @@ body {
     }
 }
 
-/* Animation Section */
+/* Animation Container */
 #animation-container {
     position: absolute;
     top: 0;
@@ -77,7 +75,7 @@ body {
     }
 }
 
-/* Mobile Content */
+/* Main Content */
 #content {
     display: none;
     position: relative;
@@ -87,12 +85,12 @@ body {
 }
 
 #logo-mingel {
-    display: block; /* Default visibility for mobile */
+    display: block; /* Mobile only */
 }
 
 @media screen and (min-width: 1280px) {
     #logo-mingel {
-        display: none !important; /* Hide on desktop screens */
+        display: none !important; /* Hide on desktop */
     }
 }
 
@@ -121,7 +119,6 @@ body {
     margin-bottom: 20px;
 }
 
-/* Mobile Buttons */
 .buttons {
     display: flex;
     flex-direction: column;
@@ -141,7 +138,7 @@ body {
     }
 }
 
-/* Footer for Mobile */
+/* Footer */
 footer {
     display: none; /* Hidden by default */
     position: fixed;
@@ -182,12 +179,12 @@ footer a:hover {
 
 /* Scroll Section for Desktop */
 #scroll-section {
-    display: none; /* Hidden by default */
+    display: none;
     background-color: #2D2D2D;
-    height: 100vh; /* Take up the full height of the viewport */
+    height: 100vh;
 }
 
-/* Show scroll section on desktop screens */
+/* Show scroll section on desktop */
 @media screen and (min-width: 1280px) {
     #scroll-section {
         display: block;
