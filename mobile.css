@@ -2,8 +2,8 @@
 body {
     margin: 0;
     font-family: 'Poppins', sans-serif;
-    background-color: #FDF6F2; /* Default background for mobile */
-    overflow: hidden; /* Prevent scrolling on mobile */
+    background-color: #FDF6F2; /* Default background for the page */
+    overflow: hidden; /* Default for mobile */
 }
 
 /* Animation Container */
@@ -15,10 +15,9 @@ body {
     height: 100%;
     z-index: 1;
     pointer-events: none;
-    background-color: #FDF6F2; /* Seashell color */
+    background-color: #FDF6F2; /* Corrected to seashell color */
 }
 
-/* Pulsating Logo */
 #pulse-logo {
     position: absolute;
     top: 50%;
@@ -29,30 +28,29 @@ body {
     z-index: 2;
 }
 
-/* Main Content */
 #content {
     display: none; /* Hidden during animation */
     position: relative;
     z-index: 3;
     padding: 20px;
     color: #2D2D2D;
-    text-align: center;
-    background-color: transparent;
 }
 
+/* Logo Section */
 #logo-mingel {
-    display: block;
+    display: block; /* Default visibility for mobile */
+    text-align: left;
 }
 
 #logo-mingel img {
     width: 130px;
 }
 
+/* Text Container */
 .text-container {
     margin-top: 60px;
     margin-bottom: 20px;
-    padding-left: 15px;
-    text-align: left; /* Align content to the left */
+    padding-left: 15px; /* Align to the left */
 }
 
 .tagline {
@@ -60,6 +58,7 @@ body {
     font-weight: 600;
     color: #2D2D2D;
     margin: 0;
+    text-align: left; /* Align to the left */
 }
 
 .sub-tagline {
@@ -68,9 +67,10 @@ body {
     color: #FC176A;
     margin-top: 5px;
     margin-bottom: 20px;
+    text-align: left; /* Align to the left */
 }
 
-/* App Store and Play Store Buttons */
+/* Buttons */
 .buttons {
     display: flex;
     flex-direction: column;
@@ -85,7 +85,7 @@ body {
 
 /* Footer */
 footer {
-    display: none; /* Hidden by default */
+    display: none; /* Hidden during animation */
     position: fixed;
     bottom: 0;
     width: 100%;
