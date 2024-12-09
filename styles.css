@@ -222,3 +222,25 @@ footer a:hover {
         width: 200px;
     }
 }
+
+/* Section for Scroll on Desktop */
+#scroll-section {
+    display: none; /* Hidden by default */
+    background-color: #2D2D2D; /* Dark grey background */
+    height: 100vh; /* Take up the full height of the viewport */
+}
+
+/* Show the section on desktop screens */
+@media screen and (min-width: 1280px) {
+    .desktop-only {
+        display: block; /* Visible only on desktop */
+    }
+}
+
+/* Enable scrolling for desktop */
+@media screen and (min-width: 1280px) {
+    body {
+        overflow-y: auto;
+    }
+}
+
