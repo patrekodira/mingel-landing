@@ -1,91 +1,13 @@
-/* General Desktop Setup */
+/* General Page Setup */
 body {
     margin: 0;
     font-family: 'Poppins', sans-serif;
-    background-color: #FDF6F2; /* Default background */
-    overflow: hidden; /* Prevent scrolling during animation */
+    background-color: #FDF6F2; /* Seashell background color */
+    overflow: hidden; /* Prevent scrolling during the animation */
 }
 
-/* Animation Container */
-#animation-container {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    z-index: 1;
-    pointer-events: none;
-    background-color: #FDF6F2; /* Background matches the landing page */
-}
-
-/* Pulsating Logo for Desktop */
-#pulse-logo {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    width: 350px;
-    height: 350px;
-    z-index: 2;
-}
-
-/* Content Hidden by Default */
-#content {
-    display: none; /* Hidden during intro animation */
-    position: relative;
-    z-index: 3;
-    padding: 20px;
-    text-align: center;
-}
-
-#logo-mingel {
-    display: block; /* Visible by default for mobile */
-}
-
-/* Hide on Desktop */
-@media screen and (min-width: 1280px) {
-    #logo-mingel {
-        display: none !important; /* Forcefully hide on desktop */
-    }
-}
-
-/* Buttons are hidden on desktop */
-.buttons {
-    display: none;
-}
-
-/* Footer is hidden on desktop */
-footer {
-    display: none;
-}
-
-/* Desktop Header */
-#desktop-header {
-    display: none; /* Hidden by default */
-    position: fixed;
-    top: 0;
-    width: 100%;
-    height: 80px;
-    background: linear-gradient(to bottom, rgba(45, 45, 45, 1), rgba(45, 45, 45, 0));
-    z-index: 3; /* Above animations */
-    align-items: center;
-    justify-content: flex-start;
-    padding: 0 20px;
-    box-sizing: border-box;
-    color: #2d2d2d;
-    font-family: 'Poppins', sans-serif;
-}
-
-.header-content {
-    display: flex;
-    align-items: center;
-    gap: 15px;
-}
-
-.header-content img {
-    height: calc(100% - 20px); /* Dynamically adjust logo size to fit within the header, leaving padding */
-    max-height: 80px; /* Ensure it doesn't exceed the header's height */
-    width: auto; /* Maintain the logo's aspect ratio */
+.scroll-enabled {
+    overflow-y: auto; /* Enable scrolling for the body */
 }
 
 /* Text Alignment */
@@ -95,12 +17,14 @@ footer {
     left: 50%;
     transform: translate(-50%, -50%);
     text-align: center;
+    z-index: 2; /* Ensure it is above the animation */
 }
 
 .tagline {
     font-size: 50px;
     font-weight: 600;
     color: #2D2D2D;
+    margin: 0; /* Ensure no extra margin disrupts alignment */
 }
 
 .sub-tagline {
@@ -110,6 +34,18 @@ footer {
     margin-top: 10px;
 }
 
+/* Animated Background */
+#animation-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1; /* Below the text */
+    pointer-events: none; /* Prevent interaction with the animation */
+    background-color: #FDF6F2; /* Matches the seashell color */
+}
+
 /* Section for Scroll */
 #scroll-section {
     display: block;
@@ -117,9 +53,26 @@ footer {
     height: 100vh; /* Full viewport height */
     color: #FFFFFF;
     padding: 20px;
+    z-index: 2; /* Above animation */
+    position: relative; /* Prevent overlapping issues */
 }
 
-/* Enable scrolling after animation ends */
-.scroll-enabled {
-    overflow-y: auto;
+/* Desktop Header */
+#desktop-header {
+    display: flex;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    height: 90px;
+    background: linear-gradient(to bottom, rgba(45, 45, 45, 1), rgba(45, 45, 45, 0));
+    z-index: 3; /* Above everything else */
+    align-items: center;
+    justify-content: flex-start;
+    padding: 0 20px;
+    box-sizing: border-box;
+}
+
+.header-content img {
+    height: calc(100% - 20px); /* Ensure the logo fits the header */
+    width: auto;
 }
