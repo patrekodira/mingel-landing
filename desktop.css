@@ -139,58 +139,8 @@ body {
 
 /* Section for Scroll */
 #scroll-section {
-    position: relative;
     background-color: #2D2D2D; /* Dark grey background */
     height: 200vh; /* Increased height to ensure enough scrolling space */
     color: #FFFFFF;
     padding: 20px;
-    overflow: hidden; /* Ensure circles don't create scroll bars */
-}
-
-/* Circle Styles */
-.circle {
-    position: absolute;
-    border-radius: 50%;
-    transform: translate(-50%, -50%);
-    mix-blend-mode: multiply; /* For overlapping color effects */
-    transition: transform 0.2s ease-in-out;
-}
-
-/* Circle Sizes */
-#circle-1 {
-    width: 150px;
-    height: 150px;
-    background: radial-gradient(circle, #FFD6AD 100%, rgba(255, 214, 173, 0) 100%);
-    top: 20%; /* Adjust to slightly overlap the top section */
-    left: 10%;
-}
-
-#circle-2 {
-    width: 180px;
-    height: 180px;
-    background: radial-gradient(circle, #FC176A 100%, rgba(252, 23, 106, 0) 100%);
-    top: 30%;
-    left: 35%;
-}
-
-#circle-3 {
-    width: 120px;
-    height: 120px;
-    background: radial-gradient(circle, #F8DDE3 100%, rgba(248, 221, 227, 0) 100%);
-    top: 25%;
-    left: 60%;
-}
-
-#circle-4 {
-    width: 200px;
-    height: 200px;
-    background: radial-gradient(circle, #FC911F 100%, rgba(252, 145, 31, 0) 100%);
-    top: 35%;
-    left: 85%;
-}
-
-/* Hover Effect */
-.circle:hover {
-    transform: translate(-50%, -50%) scale(1.1); /* Slight enlargement on hover */
-    cursor: pointer;
 }
