@@ -100,6 +100,17 @@
                 headlineDesktop.classList.remove('hidden'); // Show headline for desktop
             }
         }, 3000);
+
+        // Fade-out on scroll
+        window.addEventListener('scroll', () => {
+            const scrollPosition = window.scrollY;
+            const fadeThreshold = 100; // Adjust fade-out start point
+            if (scrollPosition > fadeThreshold) {
+                headlineDesktop.classList.add('hidden'); // Fade out
+            } else {
+                headlineDesktop.classList.remove('hidden'); // Fade in
+            }
+        });
     </script>
 </body>
 </html>
