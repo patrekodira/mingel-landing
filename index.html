@@ -23,6 +23,11 @@
     <!-- Pulsating Logo -->
     <div id="pulse-logo"></div>
 
+    <!-- Desktop Headline -->
+    <div id="headline-desktop" class="hidden">
+        <p class="tagline">expand your circle one swipe at a time.</p>
+    </div>
+
     <!-- Main Content -->
     <div id="content">
         <div id="logo-mingel">
@@ -59,6 +64,7 @@
         // Load animations
         const animationContainer = document.getElementById('animation-container');
         const pulseLogoContainer = document.getElementById('pulse-logo');
+        const headlineDesktop = document.getElementById('headline-desktop');
 
         lottie.loadAnimation({
             container: animationContainer,
@@ -87,7 +93,8 @@
 
             if (window.innerWidth >= 1280) {
                 header.style.display = "flex"; // Show header only for desktop
-                document.body.classList.add('scroll-enabled'); // Enable scrolling
+                document.body.classList.add('scroll-enabled'); // Enable scrolling for desktop
+                headlineDesktop.classList.remove('hidden'); // Show headline for desktop
             }
         }, 3000);
     </script>
