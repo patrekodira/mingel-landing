@@ -75,24 +75,25 @@ body {
 
 #headline-desktop .button-container .create-account-btn {
     display: inline-block;
-    padding: 10px 20px;
+    padding: 12px 30px; /* Adjust padding for a capsule shape */
     font-size: 16px;
     font-weight: 600;
     font-family: 'Poppins', sans-serif;
-    color: #FFFFFF;
-    background-color: #FC176A; /* Hot pink background */
-    border: none;
-    border-radius: 5px;
+    color: #2D2D2D; /* Text color to match your style */
+    background-color: #FFD6AD; /* Button background color */
+    border: 1px solid #EBEBEB; /* Outline color */
+    border-radius: 30px; /* Rounded edges to make it capsule-shaped */
     cursor: pointer;
     text-transform: uppercase;
     text-decoration: none;
     transition: background-color 0.3s ease, transform 0.2s ease;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15); /* Drop shadow effect */
 }
 
 /* Button hover effects */
 #headline-desktop .button-container .create-account-btn:hover {
-    background-color: #E0145D; /* Darker pink on hover */
-    transform: scale(1.05); /* Slightly enlarges on hover */
+    background-color: #FFCEA0; /* Slightly darker on hover */
+    transform: translateY(-2px); /* Subtle lift effect */
 }
 
 /* Visible after animation */
