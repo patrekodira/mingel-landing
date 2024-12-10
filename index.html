@@ -61,7 +61,13 @@
     </footer>
 
     <!-- Section for Scroll on Desktop -->
-    <section id="scroll-section" class="desktop-only"></section>
+    <section id="scroll-section" class="desktop-only">
+        <!-- Interactive Circles -->
+        <div class="circle" id="circle-1" data-hover-content="Swipe through events and users nearby"></div>
+        <div class="circle" id="circle-2" data-hover-content="1:1 match - Choose how to connect"></div>
+        <div class="circle" id="circle-3" data-hover-content="Group matches - Connect and socialize"></div>
+        <div class="circle" id="circle-4" data-hover-content="Create your own event or join others"></div>
+    </section>
 
     <script>
         // Load animations
@@ -101,25 +107,55 @@
             }
         }, 3000);
 
-       // Gradual fade-out on scroll
-    window.addEventListener('scroll', () => {
-        if (window.innerWidth >= 1280) {
-            const scrollPosition = window.scrollY;
-            const fadeStart = 0; // Start fading at the top
-            const fadeEnd = 200; // Fully fade out at 200px
-            const fadeRange = fadeEnd - fadeStart;
+        // Gradual fade-out on scroll
+        window.addEventListener('scroll', () => {
+            if (window.innerWidth >= 1280) {
+                const scrollPosition = window.scrollY;
+                const fadeStart = 0; // Start fading at the top
+                const fadeEnd = 200; // Fully fade out at 200px
+                const fadeRange = fadeEnd - fadeStart;
 
-            let opacity = 1;
+                let opacity = 1;
 
-            if (scrollPosition >= fadeEnd) {
-                opacity = 0;
-            } else if (scrollPosition > fadeStart) {
-                opacity = 1 - (scrollPosition - fadeStart) / fadeRange;
+                if (scrollPosition >= fadeEnd) {
+                    opacity = 0;
+                } else if (scrollPosition > fadeStart) {
+                    opacity = 1 - (scrollPosition - fadeStart) / fadeRange;
+                }
+
+                headlineDesktop.style.opacity = opacity;
             }
+        });
 
-            headlineDesktop.style.opacity = opacity;
-        }
-    });
-     </script>
+        // Interactive circle hover effect
+        const circles = document.querySelectorAll('.circle');
+        circles.forEach(circle => {
+            circle.addEventListener('mouseover', (e) => {
+                const content = circle.getAttribute('data-hover-content');
+                if (content) {
+                    const tooltip = document.createElement('div');
+                    tooltip.classList.add('tooltip');
+                    tooltip.innerText = content;
+                    tooltip.style.position = 'absolute';
+                    tooltip.style.top = `${e.clientY}px`;
+                    tooltip.style.left = `${e.clientX}px`;
+                    tooltip.style.padding = '10px';
+                    tooltip.style.background = '#FFD6AD';
+                    tooltip.style.color = '#2D2D2D';
+                    tooltip.style.borderRadius = '10px';
+                    tooltip.style.boxShadow = '0 6px 10px rgba(0, 0, 0, 0.1)';
+                    tooltip.id = 'tooltip';
+                    document.body.appendChild(tooltip);
+                }
+            });
+
+            circle.addEventListener('mouseleave', () => {
+                const tooltip = document.getElementById('tooltip');
+                if (tooltip) {
+                    tooltip.remove();
+                }
+            });
+        });
+    </script>
 </body>
 </html>
