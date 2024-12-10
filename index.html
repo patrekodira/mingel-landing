@@ -70,92 +70,62 @@
     </section>
 
     <script>
-        // Load animations
-        const animationContainer = document.getElementById('animation-container');
-        const pulseLogoContainer = document.getElementById('pulse-logo');
-        const headlineDesktop = document.getElementById('headline-desktop');
+    // Load animations
+    const animationContainer = document.getElementById('animation-container');
+    const pulseLogoContainer = document.getElementById('pulse-logo');
+    const headlineDesktop = document.getElementById('headline-desktop');
 
-        lottie.loadAnimation({
-            container: animationContainer,
-            renderer: 'svg',
-            loop: true,
-            autoplay: true,
-            path: window.innerWidth >= 1280 ? 'mingel_animation_desktop.json' : 'mingel_animation_main.json'
-        });
+    lottie.loadAnimation({
+        container: animationContainer,
+        renderer: 'svg',
+        loop: true,
+        autoplay: true,
+        path: window.innerWidth >= 1280 ? 'mingel_animation_desktop.json' : 'mingel_animation_main.json'
+    });
 
-        lottie.loadAnimation({
-            container: pulseLogoContainer,
-            renderer: 'svg',
-            loop: true,
-            autoplay: true,
-            path: window.innerWidth >= 1280 ? 'mingel_logo_pulse_desktop.json' : 'mingel_logo_pulse.json'
-        });
+    lottie.loadAnimation({
+        container: pulseLogoContainer,
+        renderer: 'svg',
+        loop: true,
+        autoplay: true,
+        path: window.innerWidth >= 1280 ? 'mingel_logo_pulse_desktop.json' : 'mingel_logo_pulse.json'
+    });
 
-        // Hide header during animation
-        const header = document.getElementById('desktop-header');
-        header.style.display = 'none';
+    // Hide header during animation
+    const header = document.getElementById('desktop-header');
+    header.style.display = 'none';
 
-        setTimeout(() => {
-            document.getElementById("pulse-logo").style.display = "none"; // Hide pulsating logo
-            document.getElementById("content").style.display = "block"; // Show landing page content
-            document.getElementById("footer").style.display = window.innerWidth >= 1280 ? "none" : "block"; // Show footer for mobile
+    setTimeout(() => {
+        document.getElementById("pulse-logo").style.display = "none"; // Hide pulsating logo
+        document.getElementById("content").style.display = "block"; // Show landing page content
+        document.getElementById("footer").style.display = window.innerWidth >= 1280 ? "none" : "block"; // Show footer for mobile
 
-            if (window.innerWidth >= 1280) {
-                header.style.display = "flex"; // Show header only for desktop
-                document.body.classList.add('scroll-enabled'); // Enable scrolling for desktop
-                headlineDesktop.classList.remove('hidden'); // Show headline for desktop
+        if (window.innerWidth >= 1280) {
+            header.style.display = "flex"; // Show header only for desktop
+            document.body.classList.add('scroll-enabled'); // Enable scrolling for desktop
+            headlineDesktop.classList.remove('hidden'); // Show headline for desktop
+        }
+    }, 3000);
+
+    // Gradual fade-out on scroll
+    window.addEventListener('scroll', () => {
+        if (window.innerWidth >= 1280) {
+            const scrollPosition = window.scrollY;
+            const fadeStart = 0; // Start fading at the top
+            const fadeEnd = 200; // Fully fade out at 200px
+            const fadeRange = fadeEnd - fadeStart;
+
+            let opacity = 1;
+
+            if (scrollPosition >= fadeEnd) {
+                opacity = 0;
+            } else if (scrollPosition > fadeStart) {
+                opacity = 1 - (scrollPosition - fadeStart) / fadeRange;
             }
-        }, 3000);
 
-        // Gradual fade-out on scroll
-        window.addEventListener('scroll', () => {
-            if (window.innerWidth >= 1280) {
-                const scrollPosition = window.scrollY;
-                const fadeStart = 0; // Start fading at the top
-                const fadeEnd = 200; // Fully fade out at 200px
-                const fadeRange = fadeEnd - fadeStart;
-
-                let opacity = 1;
-
-                if (scrollPosition >= fadeEnd) {
-                    opacity = 0;
-                } else if (scrollPosition > fadeStart) {
-                    opacity = 1 - (scrollPosition - fadeStart) / fadeRange;
-                }
-
-                headlineDesktop.style.opacity = opacity;
-            }
-        });
-
-        // Interactive circle hover effect
-        const circles = document.querySelectorAll('.circle');
-        circles.forEach(circle => {
-            circle.addEventListener('mouseover', (e) => {
-                const content = circle.getAttribute('data-hover-content');
-                if (content) {
-                    const tooltip = document.createElement('div');
-                    tooltip.classList.add('tooltip');
-                    tooltip.innerText = content;
-                    tooltip.style.position = 'absolute';
-                    tooltip.style.top = `${e.clientY}px`;
-                    tooltip.style.left = `${e.clientX}px`;
-                    tooltip.style.padding = '10px';
-                    tooltip.style.background = '#FFD6AD';
-                    tooltip.style.color = '#2D2D2D';
-                    tooltip.style.borderRadius = '10px';
-                    tooltip.style.boxShadow = '0 6px 10px rgba(0, 0, 0, 0.1)';
-                    tooltip.id = 'tooltip';
-                    document.body.appendChild(tooltip);
-                }
-            });
-
-            circle.addEventListener('mouseleave', () => {
-                const tooltip = document.getElementById('tooltip');
-                if (tooltip) {
-                    tooltip.remove();
-                }
-            });
-        });
-    </script>
+            headlineDesktop.style.opacity = opacity;
+        }
+    });
+</script>
 </body>
 </html>
