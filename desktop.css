@@ -26,7 +26,7 @@ body {
 }
 
 .header-content img {
-    max-height: 70px; /* Adjust logo size */
+    max-height: 80px; /* Adjust logo size */
     width: auto;
 }
 
@@ -64,27 +64,27 @@ body {
 }
 
 #headline-desktop .tagline {
-    font-size: 50px;
+    font-size: 60px;
     font-weight: 600;
 }
 
 /* Button styling */
 #headline-desktop .button-container {
-    margin-top: 20px; /* Spacing between headline and button */
+    margin-top: 15px; /* Spacing between headline and button */
 }
 
 #headline-desktop .button-container .create-account-btn {
     display: inline-block;
-    padding: 12px 30px; /* Adjust padding for a capsule shape */
+    padding: 10px 30px; /* Adjust padding for a capsule shape */
     font-size: 16px;
-    font-weight: 600;
+    font-weight: 400;
     font-family: 'Poppins', sans-serif;
     color: #2D2D2D; /* Text color to match your style */
     background-color: #FFD6AD; /* Button background color */
     border: 1px solid #EBEBEB; /* Outline color */
     border-radius: 30px; /* Rounded edges to make it capsule-shaped */
     cursor: pointer;
-    text-transform: uppercase;
+    text-transform: lowercase;
     text-decoration: none;
     transition: background-color 0.3s ease, transform 0.2s ease;
     box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15); /* Drop shadow effect */
