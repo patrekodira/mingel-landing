@@ -37,10 +37,11 @@ body {
     left: 0;
     width: 100%;
     height: 100%;
-    z-index: 1;
+    z-index: 100; /* Ensure it's above all other elements during animation */
     background-color: #FDF6F2; /* Ensure consistent background */
 }
 
+/* Pulsating Logo */
 #pulse-logo {
     position: absolute;
     top: 50%;
@@ -48,7 +49,7 @@ body {
     transform: translate(-50%, -50%);
     width: 300px;
     height: 300px;
-    z-index: 2;
+    z-index: 101; /* Ensure it's above the animation container */
 }
 
 /* Headline for Desktop */
