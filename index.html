@@ -62,11 +62,12 @@
 
     <!-- Section for Scroll on Desktop -->
     <section id="scroll-section" class="desktop-only">
-        <!-- Interactive Circles -->
-        <div class="circle" id="circle-1" data-hover-content="Swipe through events and users nearby"></div>
-        <div class="circle" id="circle-2" data-hover-content="1:1 match - Choose how to connect"></div>
-        <div class="circle" id="circle-3" data-hover-content="Group matches - Connect and socialize"></div>
-        <div class="circle" id="circle-4" data-hover-content="Create your own event or join others"></div>
+        <div class="circle-container">
+            <div class="circle" id="circle-1"></div>
+            <div class="circle" id="circle-2"></div>
+            <div class="circle" id="circle-3"></div>
+            <div class="circle" id="circle-4"></div>
+        </div>
     </section>
 
     <script>
@@ -106,26 +107,6 @@
             headlineDesktop.classList.remove('hidden'); // Show headline for desktop
         }
     }, 3000);
-
-    // Gradual fade-out on scroll
-    window.addEventListener('scroll', () => {
-        if (window.innerWidth >= 1280) {
-            const scrollPosition = window.scrollY;
-            const fadeStart = 0; // Start fading at the top
-            const fadeEnd = 200; // Fully fade out at 200px
-            const fadeRange = fadeEnd - fadeStart;
-
-            let opacity = 1;
-
-            if (scrollPosition >= fadeEnd) {
-                opacity = 0;
-            } else if (scrollPosition > fadeStart) {
-                opacity = 1 - (scrollPosition - fadeStart) / fadeRange;
-            }
-
-            headlineDesktop.style.opacity = opacity;
-        }
-    });
-</script>
+    </script>
 </body>
 </html>
