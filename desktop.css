@@ -2,29 +2,73 @@
 body {
     margin: 0;
     font-family: 'Poppins', sans-serif;
-    background-color: #FDF6F2; /* Seashell background color */
-    overflow: hidden; /* Prevent scrolling during the animation */
+    background-color: #FDF6F2;
+    overflow: hidden;
 }
 
 .scroll-enabled {
-    overflow-y: auto; /* Enable scrolling for the body */
+    overflow-y: auto; /* Enable scrolling after animation */
 }
 
-/* Text Alignment */
+/* Desktop Header */
+#desktop-header {
+    display: none; /* Hidden by default */
+    position: fixed;
+    top: 0;
+    width: 100%;
+    height: 90px;
+    background: linear-gradient(to bottom, rgba(45, 45, 45, 1), rgba(45, 45, 45, 0));
+    z-index: 3; /* Above animations */
+    align-items: center;
+    justify-content: flex-start;
+    padding: 0 20px;
+    box-sizing: border-box;
+}
+
+.header-content img {
+    max-height: 70px; /* Adjust logo size */
+    width: auto;
+}
+
+/* Animation Container */
+#animation-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    background-color: #FDF6F2; /* Ensure consistent background */
+}
+
+#pulse-logo {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 300px;
+    height: 300px;
+    z-index: 2;
+}
+
+/* Main Content */
+#content {
+    display: none; /* Hidden during animation */
+    text-align: center;
+    z-index: 3;
+}
+
 .text-container {
     position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    text-align: center;
-    z-index: 2; /* Ensure it is above the animation */
+    color: #2D2D2D;
 }
 
 .tagline {
     font-size: 50px;
     font-weight: 600;
-    color: #2D2D2D;
-    margin: 0; /* Ensure no extra margin disrupts alignment */
 }
 
 .sub-tagline {
@@ -34,45 +78,8 @@ body {
     margin-top: 10px;
 }
 
-/* Animated Background */
-#animation-container {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    z-index: 1; /* Below the text */
-    pointer-events: none; /* Prevent interaction with the animation */
-    background-color: #FDF6F2; /* Matches the seashell color */
-}
-
 /* Section for Scroll */
 #scroll-section {
-    display: block;
     background-color: #2D2D2D; /* Dark grey background */
     height: 100vh; /* Full viewport height */
-    color: #FFFFFF;
-    padding: 20px;
-    z-index: 2; /* Above animation */
-    position: relative; /* Prevent overlapping issues */
-}
-
-/* Desktop Header */
-#desktop-header {
-    display: flex;
-    position: fixed;
-    top: 0;
-    width: 100%;
-    height: 90px;
-    background: linear-gradient(to bottom, rgba(45, 45, 45, 1), rgba(45, 45, 45, 0));
-    z-index: 3; /* Above everything else */
-    align-items: center;
-    justify-content: flex-start;
-    padding: 0 20px;
-    box-sizing: border-box;
-}
-
-.header-content img {
-    height: calc(100% - 20px); /* Ensure the logo fits the header */
-    width: auto;
 }
