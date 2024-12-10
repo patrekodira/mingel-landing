@@ -136,3 +136,8 @@ body {
     color: #FFFFFF;
     padding: 20px;
 }
+
+/* Hidden class */
+.hidden {
+    display: none;
+}
