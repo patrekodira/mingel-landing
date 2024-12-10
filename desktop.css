@@ -155,30 +155,66 @@ body {
     position: relative;
 }
 
+/* Default circle styles */
 .circle {
-    width: 150px; /* Default size of the circle */
-    height: 150px;
     border-radius: 50%;
-    background: radial-gradient(circle, rgba(255, 214, 173, 1) 60%, rgba(255, 214, 173, 0) 100%);
     position: relative;
     cursor: pointer;
     transition: transform 0.3s ease;
 }
 
+/* Individual circle sizes with static base sizes */
 #circle-1 {
+    width: 120px;
+    height: 120px;
     background: radial-gradient(circle, rgba(255, 214, 173, 1) 60%, rgba(255, 214, 173, 0) 100%);
 }
 
+/* Responsive adjustments */
+@media screen and (min-width: 1280px) {
+    #circle-1 {
+        width: 8vw; /* Responsive adjustment */
+        height: 8vw;
+    }
+}
+
 #circle-2 {
+    width: 150px;
+    height: 150px;
     background: radial-gradient(circle, rgba(252, 23, 106, 1) 60%, rgba(252, 23, 106, 0) 100%);
 }
 
+@media screen and (min-width: 1280px) {
+    #circle-2 {
+        width: 10vw;
+        height: 10vw;
+    }
+}
+
 #circle-3 {
+    width: 180px;
+    height: 180px;
     background: radial-gradient(circle, rgba(248, 221, 227, 1) 60%, rgba(248, 221, 227, 0) 100%);
 }
 
+@media screen and (min-width: 1280px) {
+    #circle-3 {
+        width: 12vw;
+        height: 12vw;
+    }
+}
+
 #circle-4 {
+    width: 140px;
+    height: 140px;
     background: radial-gradient(circle, rgba(252, 145, 31, 1) 60%, rgba(252, 145, 31, 0) 100%);
+}
+
+@media screen and (min-width: 1280px) {
+    #circle-4 {
+        width: 9vw;
+        height: 9vw;
+    }
 }
 
 /* Hover Effect */
