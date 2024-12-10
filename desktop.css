@@ -61,6 +61,13 @@ body {
     text-align: center;
     z-index: 2; /* Above animations */
     color: #2D2D2D;
+    opacity: 1; /* Fully visible by default */
+    transition: opacity 0.5s ease; /* Smooth fade-out transition */
+}
+
+/* Fading out when scrolled */
+#headline-desktop.hidden {
+    opacity: 0; /* Fully transparent when scrolled */
 }
 
 #headline-desktop .tagline {
@@ -136,9 +143,4 @@ body {
     height: 200vh; /* Increased height to ensure enough scrolling space */
     color: #FFFFFF;
     padding: 20px;
-}
-
-/* Hidden class */
-.hidden {
-    display: none;
 }
