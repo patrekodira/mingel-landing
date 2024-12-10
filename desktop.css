@@ -141,20 +141,23 @@ body {
 #scroll-section {
     position: relative;
     display: flex;
-    justify-content: space-evenly; /* Spread circles evenly across the width */
-    align-items: center; /* Vertically align circles within the section */
+    justify-content: space-evenly; /* Spread circles evenly */
+    align-items: flex-start; /* Align circles closer to the top */
     background-color: #2D2D2D; /* Dark grey background */
     height: 200vh; /* Increased height to ensure enough scrolling space */
-    padding: 20px 0;
+    padding: 100px 0; /* Add top padding to move circles into view */
     overflow: hidden; /* Prevent overflow */
+    z-index: 2; /* Ensure the circles are above other elements */
 }
 
 /* Circle Styles */
 .circle {
+    position: relative; /* Ensure they are positioned correctly within the section */
     border-radius: 50%;
     mix-blend-mode: multiply; /* For overlapping color effects */
     transition: transform 0.2s ease-in-out;
     flex-shrink: 0; /* Prevent circles from shrinking */
+    z-index: 3; /* Above the background */
 }
 
 /* Circle Sizes (Responsive) */
