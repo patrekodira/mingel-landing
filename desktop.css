@@ -51,6 +51,28 @@ body {
     z-index: 2;
 }
 
+/* Headline for Desktop */
+#headline-desktop {
+    display: none; /* Hidden by default */
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    z-index: 2; /* Above animations */
+    color: #2D2D2D;
+}
+
+#headline-desktop .tagline {
+    font-size: 50px;
+    font-weight: 600;
+}
+
+/* Visible after animation */
+#headline-desktop:not(.hidden) {
+    display: block;
+}
+
 /* Main Content */
 #content {
     display: none; /* Hidden during animation */
