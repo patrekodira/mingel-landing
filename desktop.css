@@ -56,6 +56,8 @@ body {
     display: none; /* Hidden during animation */
     text-align: center;
     z-index: 3;
+    background-color: #FDF6F2; /* Ensure consistent background */
+    height: 100vh; /* Full viewport height for landing page */
 }
 
 .text-container {
@@ -81,5 +83,7 @@ body {
 /* Section for Scroll */
 #scroll-section {
     background-color: #2D2D2D; /* Dark grey background */
-    height: 100vh; /* Full viewport height */
+    height: 200vh; /* Increased height to ensure enough scrolling space */
+    color: #FFFFFF;
+    padding: 20px;
 }
