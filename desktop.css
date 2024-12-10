@@ -84,7 +84,7 @@ body {
     border: 1px solid #EBEBEB; /* Outline color */
     border-radius: 30px; /* Rounded edges to make it capsule-shaped */
     cursor: pointer;
-    text-transform: lowercase;
+    text-transform: none !important; /* Enforce lowercase */
     text-decoration: none;
     transition: background-color 0.3s ease, transform 0.2s ease;
     box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15); /* Drop shadow effect */
