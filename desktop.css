@@ -37,11 +37,10 @@ body {
     left: 0;
     width: 100%;
     height: 100%;
-    z-index: 100; /* Ensure it's above all other elements during animation */
+    z-index: 1;
     background-color: #FDF6F2; /* Ensure consistent background */
 }
 
-/* Pulsating Logo */
 #pulse-logo {
     position: absolute;
     top: 50%;
@@ -49,7 +48,7 @@ body {
     transform: translate(-50%, -50%);
     width: 300px;
     height: 300px;
-    z-index: 101; /* Ensure it's above the animation container */
+    z-index: 2;
 }
 
 /* Headline for Desktop */
@@ -141,69 +140,57 @@ body {
 /* Section for Scroll */
 #scroll-section {
     position: relative;
-    display: flex;
-    justify-content: space-evenly; /* Spread circles evenly */
-    align-items: flex-start; /* Align circles closer to the top */
     background-color: #2D2D2D; /* Dark grey background */
     height: 200vh; /* Increased height to ensure enough scrolling space */
-    padding: 100px 0; /* Add top padding to move circles into view */
-    overflow: hidden; /* Prevent overflow */
-    z-index: 2; /* Ensure the circles are above other elements */
+    color: #FFFFFF;
+    padding: 20px;
+    overflow: hidden; /* Ensure circles don't create scroll bars */
 }
 
 /* Circle Styles */
 .circle {
-    position: relative; /* Ensure they are positioned correctly within the section */
+    position: absolute;
     border-radius: 50%;
+    transform: translate(-50%, -50%);
     mix-blend-mode: multiply; /* For overlapping color effects */
     transition: transform 0.2s ease-in-out;
-    flex-shrink: 0; /* Prevent circles from shrinking */
-    z-index: 3; /* Above the background */
 }
 
-/* Circle Sizes (Responsive) */
+/* Circle Sizes */
 #circle-1 {
-    width: 10vw;
-    height: 10vw;
+    width: 150px;
+    height: 150px;
     background: radial-gradient(circle, #FFD6AD 100%, rgba(255, 214, 173, 0) 100%);
+    top: 20%; /* Adjust to slightly overlap the top section */
+    left: 10%;
 }
 
 #circle-2 {
-    width: 12vw;
-    height: 12vw;
+    width: 180px;
+    height: 180px;
     background: radial-gradient(circle, #FC176A 100%, rgba(252, 23, 106, 0) 100%);
+    top: 30%;
+    left: 35%;
 }
 
 #circle-3 {
-    width: 8vw;
-    height: 8vw;
+    width: 120px;
+    height: 120px;
     background: radial-gradient(circle, #F8DDE3 100%, rgba(248, 221, 227, 0) 100%);
+    top: 25%;
+    left: 60%;
 }
 
 #circle-4 {
-    width: 14vw;
-    height: 14vw;
+    width: 200px;
+    height: 200px;
     background: radial-gradient(circle, #FC911F 100%, rgba(252, 145, 31, 0) 100%);
+    top: 35%;
+    left: 85%;
 }
 
 /* Hover Effect */
 .circle:hover {
-    transform: scale(1.1); /* Slight enlargement on hover */
+    transform: translate(-50%, -50%) scale(1.1); /* Slight enlargement on hover */
     cursor: pointer;
-}
-
-/* Small Screens (Optional) */
-@media (max-width: 1024px) {
-    .circle {
-        width: 15vw;
-        height: 15vw;
-    }
-}
-
-/* Large Screens (Optional) */
-@media (min-width: 1920px) {
-    .circle {
-        width: 7vw;
-        height: 7vw;
-    }
 }
