@@ -32,7 +32,7 @@
     </div>
 
     <!-- Main Content -->
-    <div id="content" style="display: none;">
+    <div id="content">
         <div id="logo-mingel">
             <img src="logo_mingel.png" alt="Mingel Logo">
         </div>
@@ -51,7 +51,7 @@
     </div>
 
     <!-- Footer -->
-    <footer id="footer" style="display: none;">
+    <footer id="footer">
         <p>
             <a href="privacy-policy.html">privacy policy</a> | 
             <a href="/terms">terms & conditions</a> | 
@@ -91,7 +91,7 @@
             path: window.innerWidth >= 1280 ? 'mingel_logo_pulse_desktop.json' : 'mingel_logo_pulse.json'
         });
 
-        // Show animations during the first 3 seconds
+        // Hide header during animation
         const header = document.getElementById('desktop-header');
         header.style.display = 'none';
 
@@ -112,8 +112,8 @@
         window.addEventListener('scroll', () => {
             if (window.innerWidth >= 1280) {
                 const scrollPosition = window.scrollY;
-                const fadeStart = 0;
-                const fadeEnd = 200;
+                const fadeStart = 0; // Start fading at the top
+                const fadeEnd = 200; // Fully fade out at 200px
                 const fadeRange = fadeEnd - fadeStart;
 
                 let opacity = 1;
