@@ -143,7 +143,7 @@ body {
     height: 200vh; /* Increased height to ensure enough scrolling space */
     color: #FFFFFF;
     padding: 20px;
-    z-index: 4; /* Above animations */
+    z-index: 2; /* Above animations */
 }
 
 /* Interactive Circles */
@@ -156,6 +156,7 @@ body {
     position: relative;
     height: auto; /* Adjust height to fit content */
     gap: 10px; /* Reduce space between circles */
+    z-index: 2; /* Above animations */
 }
 
 /* Default circle styles */
@@ -238,5 +239,6 @@ body {
 
 /* Hover Effect */
 .circle:hover {
+    z-index: 5; /* Bring the hovered circle above others */
     transform: scale(2.0);
 }
