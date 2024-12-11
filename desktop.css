@@ -155,6 +155,7 @@ body {
     position: relative;
     height: auto; /* Adjust height to fit content */
     gap: 10px; /* Reduce space between circles */
+    z-index: 4; /* Above animations */
 }
 
 /* Default circle styles */
