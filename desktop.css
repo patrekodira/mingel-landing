@@ -183,6 +183,7 @@ body {
         rgba(255, 214, 173, 0.5) 70%, /* Midway with 50% opacity */
         rgba(255, 214, 173, 0) 100% /* Edges with full transparency */
     );
+    transform: translateY(-40px); /* Move circle up */
 }
 
 @media screen and (min-width: 1280px) {
@@ -200,6 +201,7 @@ body {
         rgba(252, 23, 106, 0.5) 70%, 
         rgba(252, 23, 106, 0) 100%
     );
+    transform: translateY(20px); /* Keep this slightly lower */
 }
 
 @media screen and (min-width: 1280px) {
@@ -217,6 +219,7 @@ body {
         rgba(248, 221, 227, 0.5) 70%, 
         rgba(248, 221, 227, 0) 100%
     );
+    transform: translateY(-50px); /* Move circle up more */
 }
 
 @media screen and (min-width: 1280px) {
@@ -234,6 +237,7 @@ body {
         rgba(252, 145, 31, 0.5) 70%, 
         rgba(252, 145, 31, 0) 100%
     );
+    transform: translateY(30px); /* Move this lower */
 }
 
 @media screen and (min-width: 1280px) {
