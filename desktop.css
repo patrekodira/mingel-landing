@@ -163,17 +163,20 @@ body {
     transition: transform 0.3s ease;
 }
 
-/* Individual circle sizes with static base sizes */
+/* Individual circle sizes with a smoother radial gradient */
 #circle-1 {
     width: 220px;
     height: 220px;
-    background: radial-gradient(circle, rgba(255, 214, 173, 1) 100%, rgba(255, 214, 173, 1) 0%);
+    background: radial-gradient(circle, 
+        rgba(255, 214, 173, 1) 40%, /* Core with full opacity */
+        rgba(255, 214, 173, 0.5) 70%, /* Midway with 50% opacity */
+        rgba(255, 214, 173, 0) 100% /* Edges with full transparency */
+    );
 }
 
-/* Responsive adjustments */
 @media screen and (min-width: 1280px) {
     #circle-1 {
-        width: 16vw; /* Responsive adjustment */
+        width: 16vw;
         height: 16vw;
     }
 }
@@ -181,7 +184,11 @@ body {
 #circle-2 {
     width: 250px;
     height: 250px;
-    background: radial-gradient(circle, rgba(252, 23, 106, 1) 100%, rgba(252, 23, 106, 1) 0%);
+    background: radial-gradient(circle, 
+        rgba(252, 23, 106, 1) 40%, 
+        rgba(252, 23, 106, 0.5) 70%, 
+        rgba(252, 23, 106, 0) 100%
+    );
 }
 
 @media screen and (min-width: 1280px) {
@@ -194,7 +201,11 @@ body {
 #circle-3 {
     width: 280px;
     height: 280px;
-    background: radial-gradient(circle, rgba(248, 221, 227, 1) 100%, rgba(248, 221, 227, 1) 0%);
+    background: radial-gradient(circle, 
+        rgba(248, 221, 227, 1) 40%, 
+        rgba(248, 221, 227, 0.5) 70%, 
+        rgba(248, 221, 227, 0) 100%
+    );
 }
 
 @media screen and (min-width: 1280px) {
@@ -207,7 +218,11 @@ body {
 #circle-4 {
     width: 240px;
     height: 240px;
-    background: radial-gradient(circle, rgba(252, 145, 31, 1) 100%, rgba(252, 145, 31, 1) 0%);
+    background: radial-gradient(circle, 
+        rgba(252, 145, 31, 1) 40%, 
+        rgba(252, 145, 31, 0.5) 70%, 
+        rgba(252, 145, 31, 0) 100%
+    );
 }
 
 @media screen and (min-width: 1280px) {
