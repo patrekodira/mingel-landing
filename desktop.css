@@ -144,12 +144,6 @@ body {
     color: #FFFFFF;
     padding: 20px;
     z-index: 2; /* Above animations */
-    display: none; /* Hidden during animation */
-}
-
-/* Make scroll section visible after animation */
-.scroll-enabled #scroll-section {
-    display: block;
 }
 
 /* Interactive Circles */
