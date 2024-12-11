@@ -51,6 +51,92 @@ body {
     z-index: 2;
 }
 
+/* Headline for Desktop */
+#headline-desktop {
+    display: none; /* Hidden by default */
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    z-index: 2; /* Above animations */
+    color: #2D2D2D;
+    opacity: 1; /* Fully visible by default */
+    transition: opacity 0.5s ease; /* Smooth fade-out transition */
+}
+
+/* Fading out when scrolled */
+#headline-desktop.hidden {
+    opacity: 0; /* Fully transparent when scrolled */
+}
+
+#headline-desktop .tagline {
+    font-size: 60px;
+    font-weight: 600;
+}
+
+/* Button styling */
+#headline-desktop .button-container {
+    margin-top: 15px; /* Spacing between headline and button */
+}
+
+#headline-desktop .button-container .create-account-btn {
+    display: inline-block;
+    padding: 10px 30px; /* Adjust padding for a capsule shape */
+    font-size: 16px;
+    font-weight: 400;
+    font-family: 'Poppins', sans-serif;
+    color: #2D2D2D; /* Text color to match your style */
+    background-color: #FFD6AD; /* Button background color */
+    border: 1px solid #EBEBEB; /* Outline color */
+    border-radius: 30px; /* Rounded edges to make it capsule-shaped */
+    cursor: pointer;
+    text-transform: none !important; /* Enforce lowercase */
+    text-decoration: none;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15); /* Drop shadow effect */
+}
+
+/* Button hover effects */
+#headline-desktop .button-container .create-account-btn:hover {
+    background-color: #FFCEA0; /* Slightly darker on hover */
+    transform: translateY(-2px); /* Subtle lift effect */
+}
+
+/* Visible after animation */
+#headline-desktop:not(.hidden) {
+    display: block;
+}
+
+/* Main Content */
+#content {
+    display: none; /* Hidden during animation */
+    text-align: center;
+    z-index: 3;
+    background-color: #FDF6F2; /* Ensure consistent background */
+    height: 100vh; /* Full viewport height for landing page */
+}
+
+.text-container {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: #2D2D2D;
+}
+
+.tagline {
+    font-size: 50px;
+    font-weight: 600;
+}
+
+.sub-tagline {
+    font-size: 30px;
+    font-weight: 400;
+    color: #FC176A;
+    margin-top: 10px;
+}
+
 /* Section for Scroll */
 #scroll-section {
     background-color: #2D2D2D; /* Dark grey background */
@@ -76,8 +162,7 @@ body {
     position: relative;
     height: auto; /* Adjust height to fit content */
     gap: 10px; /* Reduce space between circles */
-    z-index: 4; /* Ensure circles are above animations */
-    pointer-events: auto; /* Allow interactions */
+    z-index: 2; /* Above animations */
 }
 
 /* Default circle styles */
@@ -85,9 +170,8 @@ body {
     border-radius: 50%;
     position: relative;
     cursor: pointer;
-    transition: transform 0.3s ease, z-index 0.3s ease;
+    transition: transform 0.3s ease;
     margin: 0px; /* Reduce horizontal spacing */
-    z-index: 4; /* Ensure circles are interactive */
 }
 
 /* Individual circle sizes with a smoother radial gradient */
@@ -95,9 +179,10 @@ body {
     width: 220px;
     height: 220px;
     background: radial-gradient(circle, 
-        rgba(255, 214, 173, 1) 40%, 
-        rgba(255, 214, 173, 0.5) 70%, 
-        rgba(255, 214, 173, 0) 100%);
+        rgba(255, 214, 173, 1) 40%, /* Core with full opacity */
+        rgba(255, 214, 173, 0.5) 70%, /* Midway with 50% opacity */
+        rgba(255, 214, 173, 0) 100% /* Edges with full transparency */
+    );
     transform: translateY(-40px); /* Move circle up */
 }
 
@@ -114,7 +199,8 @@ body {
     background: radial-gradient(circle, 
         rgba(252, 23, 106, 1) 40%, 
         rgba(252, 23, 106, 0.5) 70%, 
-        rgba(252, 23, 106, 0) 100%);
+        rgba(252, 23, 106, 0) 100%
+    );
     transform: translateY(20px); /* Keep this slightly lower */
 }
 
@@ -131,7 +217,8 @@ body {
     background: radial-gradient(circle, 
         rgba(248, 221, 227, 1) 40%, 
         rgba(248, 221, 227, 0.5) 70%, 
-        rgba(248, 221, 227, 0) 100%);
+        rgba(248, 221, 227, 0) 100%
+    );
     transform: translateY(-50px); /* Move circle up more */
 }
 
@@ -148,7 +235,8 @@ body {
     background: radial-gradient(circle, 
         rgba(252, 145, 31, 1) 40%, 
         rgba(252, 145, 31, 0.5) 70%, 
-        rgba(252, 145, 31, 0) 100%);
+        rgba(252, 145, 31, 0) 100%
+    );
     transform: translateY(30px); /* Move this lower */
 }
 
@@ -161,7 +249,6 @@ body {
 
 /* Hover Effect */
 .circle:hover {
-    z-index: 6; /* Bring the hovered circle above others */
-    transform: scale(2.0); /* Scale on hover */
-    transition: transform 0.3s ease, z-index 0.3s ease;
+    z-index: 5; /* Bring the hovered circle above others */
+    transform: scale(2.0);
 }
