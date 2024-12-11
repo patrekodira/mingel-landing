@@ -70,13 +70,14 @@ body {
 .circle-container {
     display: flex;
     justify-content: space-between;
-    align-items: flex-start;
+    align-items: center;
     width: 100%;
     padding: 50px 0;
     position: relative;
     height: auto; /* Adjust height to fit content */
     gap: 10px; /* Reduce space between circles */
-    z-index: 3; /* Above scroll section */
+    z-index: 4; /* Ensure circles are above animations */
+    pointer-events: auto; /* Allow interactions */
 }
 
 /* Default circle styles */
@@ -86,7 +87,7 @@ body {
     cursor: pointer;
     transition: transform 0.3s ease, z-index 0.3s ease;
     margin: 0px; /* Reduce horizontal spacing */
-    z-index: 3; /* Ensure circles are above background */
+    z-index: 4; /* Ensure circles are interactive */
 }
 
 /* Individual circle sizes with a smoother radial gradient */
@@ -94,10 +95,9 @@ body {
     width: 220px;
     height: 220px;
     background: radial-gradient(circle, 
-        rgba(255, 214, 173, 1) 40%, /* Core with full opacity */
-        rgba(255, 214, 173, 0.5) 70%, /* Midway with 50% opacity */
-        rgba(255, 214, 173, 0) 100% /* Edges with full transparency */
-    );
+        rgba(255, 214, 173, 1) 40%, 
+        rgba(255, 214, 173, 0.5) 70%, 
+        rgba(255, 214, 173, 0) 100%);
     transform: translateY(-40px); /* Move circle up */
 }
 
@@ -114,8 +114,7 @@ body {
     background: radial-gradient(circle, 
         rgba(252, 23, 106, 1) 40%, 
         rgba(252, 23, 106, 0.5) 70%, 
-        rgba(252, 23, 106, 0) 100%
-    );
+        rgba(252, 23, 106, 0) 100%);
     transform: translateY(20px); /* Keep this slightly lower */
 }
 
@@ -132,8 +131,7 @@ body {
     background: radial-gradient(circle, 
         rgba(248, 221, 227, 1) 40%, 
         rgba(248, 221, 227, 0.5) 70%, 
-        rgba(248, 221, 227, 0) 100%
-    );
+        rgba(248, 221, 227, 0) 100%);
     transform: translateY(-50px); /* Move circle up more */
 }
 
@@ -150,8 +148,7 @@ body {
     background: radial-gradient(circle, 
         rgba(252, 145, 31, 1) 40%, 
         rgba(252, 145, 31, 0.5) 70%, 
-        rgba(252, 145, 31, 0) 100%
-    );
+        rgba(252, 145, 31, 0) 100%);
     transform: translateY(30px); /* Move this lower */
 }
 
@@ -164,7 +161,7 @@ body {
 
 /* Hover Effect */
 .circle:hover {
-    z-index: 5; /* Bring the hovered circle above others */
+    z-index: 6; /* Bring the hovered circle above others */
     transform: scale(2.0); /* Scale on hover */
     transition: transform 0.3s ease, z-index 0.3s ease;
 }
