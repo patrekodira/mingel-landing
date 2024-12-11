@@ -153,6 +153,8 @@ body {
     width: 100%;
     padding: 50px 0;
     position: relative;
+    height: auto; /* Adjust height to fit content */
+    gap: 10px; /* Reduce space between circles */
 }
 
 /* Default circle styles */
@@ -161,6 +163,7 @@ body {
     position: relative;
     cursor: pointer;
     transition: transform 0.3s ease;
+    margin: 0 5px; /* Reduce horizontal spacing */
 }
 
 /* Individual circle sizes with a smoother radial gradient */
