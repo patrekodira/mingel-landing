@@ -163,7 +163,7 @@ body {
     position: relative;
     cursor: pointer;
     transition: transform 0.3s ease;
-    margin: 0 5px; /* Reduce horizontal spacing */
+    margin: 0px; /* Reduce horizontal spacing */
 }
 
 /* Individual circle sizes with a smoother radial gradient */
