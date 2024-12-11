@@ -61,7 +61,7 @@
     </footer>
 
     <!-- Section for Scroll on Desktop -->
-    <section id="scroll-section" class="desktop-only">
+    <section id="scroll-section" class="desktop-only hidden-during-animation">
         <div class="circle-container">
             <div class="circle" id="circle-1"></div>
             <div class="circle" id="circle-2"></div>
@@ -75,6 +75,7 @@
     const animationContainer = document.getElementById('animation-container');
     const pulseLogoContainer = document.getElementById('pulse-logo');
     const headlineDesktop = document.getElementById('headline-desktop');
+    const scrollSection = document.getElementById('scroll-section');
 
     lottie.loadAnimation({
         container: animationContainer,
@@ -105,6 +106,7 @@
             header.style.display = "flex"; // Show header only for desktop
             document.body.classList.add('scroll-enabled'); // Enable scrolling for desktop
             headlineDesktop.classList.remove('hidden'); // Show headline for desktop
+            scrollSection.classList.remove('hidden-during-animation'); // Make circles visible
         }
     }, 3000);
     </script>
