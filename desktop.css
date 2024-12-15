@@ -139,7 +139,7 @@ body {
 
 /* Section for Scroll */
 #scroll-section {
-    background-color: #2D2D2D; /* Dark grey background */
+    background-color: #FDF6F2; /* Seashell background */
     height: 200vh; /* Increased height to ensure enough scrolling space */
     color: #FFFFFF;
     padding: 20px;
