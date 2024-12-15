@@ -141,7 +141,7 @@ body {
 #scroll-section {
     background-color: #FDF6F2; /* Seashell background */
     height: 200vh; /* Increased height to ensure enough scrolling space */
-    color: #FFFFFF;
+    color: #FDF6F2;
     padding: 20px;
     z-index: 2; /* Above animations */
     display: none; /* Hidden during animation */
